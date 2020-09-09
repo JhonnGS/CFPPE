@@ -1,0 +1,1855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="plataformaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="actividades">
+          <Key>
+            <PropertyRef Name="idActividad" />
+          </Key>
+          <Property Name="idActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="idMateria" Type="int" Nullable="false" />
+          <Property Name="NombreA" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Tema" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Calificacion" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="FechaEntrega" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Detalle" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="TempoActividad" Type="time" Precision="0" Nullable="false" />
+          <Property Name="ValorA" Type="int" Nullable="false" />
+          <Property Name="idMaestro" Type="int" />
+        </EntityType>
+        <EntityType Name="administrador">
+          <Key>
+            <PropertyRef Name="idAdministrador" />
+          </Key>
+          <Property Name="idAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="alumnos">
+          <Key>
+            <PropertyRef Name="idAlumno" />
+          </Key>
+          <Property Name="idAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="archivodocalum">
+          <Key>
+            <PropertyRef Name="idArchivoDA" />
+          </Key>
+          <Property Name="idArchivoDA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Archivo" Type="bit" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="archivodocmaestro">
+          <Key>
+            <PropertyRef Name="idArchivoDM" />
+          </Key>
+          <Property Name="idArchivoDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Archivo" Type="bit" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="archivoprealum">
+          <Key>
+            <PropertyRef Name="idArchivoPA" />
+          </Key>
+          <Property Name="idArchivoPA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Archivo" Type="bit" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="archivopremaes">
+          <Key>
+            <PropertyRef Name="idArchivoPM" />
+          </Key>
+          <Property Name="idArchivoPM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Archivo" Type="bit" Nullable="false" />
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="Descricion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="archivospizarronma">
+          <Key>
+            <PropertyRef Name="idAP" />
+          </Key>
+          <Property Name="idAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FechaCracion" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="calificacion">
+          <Key>
+            <PropertyRef Name="idCalificacion" />
+          </Key>
+          <Property Name="idCalificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMateria" Type="int" Nullable="false" />
+          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="Calificacion" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detallepizarron">
+          <Key>
+            <PropertyRef Name="idDetallePizarron" />
+          </Key>
+          <Property Name="idDetallePizarron" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAP" Type="int" Nullable="false" />
+          <Property Name="Documento" Type="blob" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="examen">
+          <Key>
+            <PropertyRef Name="idExamen" />
+          </Key>
+          <Property Name="idExamen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="generacionpreguntas">
+          <Key>
+            <PropertyRef Name="idGeneracion Preguntas" />
+          </Key>
+          <Property Name="idGeneracion Preguntas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="graficacion">
+          <Key>
+            <PropertyRef Name="idGraficacion" />
+          </Key>
+          <Property Name="idGraficacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="D1" Type="float" Nullable="false" />
+          <Property Name="D2" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inscripcion">
+          <Key>
+            <PropertyRef Name="idInscripcion" />
+          </Key>
+          <Property Name="idInscripcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FechaNac" Type="date" Nullable="false" />
+          <Property Name="FechaInscripcion" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Edad" Type="int" Nullable="false" />
+          <Property Name="idSeccion" Type="int" Nullable="false" />
+          <Property Name="Grado" Type="int" Nullable="false" />
+          <Property Name="Grupo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AlergiasEnfermedad" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Observacion" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NombreT" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Ocupacion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelCasa" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TelTrabajo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="libretamochalum">
+          <Key>
+            <PropertyRef Name="idLibMA" />
+          </Key>
+          <Property Name="idLibMA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="NombreLib" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Tema" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Documento" Type="bit" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="libretamochmaes">
+          <Key>
+            <PropertyRef Name="idLibMM" />
+          </Key>
+          <Property Name="idLibMM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="NombreLib" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Documento" Type="bit" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="maestros">
+          <Key>
+            <PropertyRef Name="idMaestro" />
+          </Key>
+          <Property Name="idMaestro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="materia">
+          <Key>
+            <PropertyRef Name="idMateria" />
+          </Key>
+          <Property Name="idMateria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSeccion" Type="int" Nullable="false" />
+          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="Materia" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CodigoM" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="FechaIN" Type="date" Nullable="false" />
+          <Property Name="FechaFI" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Grado" Type="int" Nullable="false" />
+          <Property Name="Grupo" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="idTipoMateria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="padretutor">
+          <Key>
+            <PropertyRef Name="idPadre" />
+          </Key>
+          <Property Name="idPadre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="idPerfil" />
+          </Key>
+          <Property Name="idPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="seccion">
+          <Key>
+            <PropertyRef Name="idSeccion" />
+          </Key>
+          <Property Name="idSeccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="seleccion">
+          <Key>
+            <PropertyRef Name="idSeleccion" />
+          </Key>
+          <Property Name="idSeleccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Seccion" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Materia" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Bimestre" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tareas">
+          <Key>
+            <PropertyRef Name="idTarea" />
+          </Key>
+          <Property Name="idTarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="idMateria" Type="int" Nullable="false" />
+          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="NombreT" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Tema" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CalificacionA" Type="int" Nullable="false" />
+          <Property Name="CalificacionR" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Fecha_E" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Detalle" Type="varchar" MaxLength="45" />
+          <Property Name="Archivo" Type="blob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipomateria">
+          <Key>
+            <PropertyRef Name="idTipoMateria" />
+          </Key>
+          <Property Name="idTipoMateria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Foto" Type="blob" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="idSeccion" Type="int" Nullable="false" />
+          <Property Name="idPerfil" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="AlumnoAc">
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
+          <End Role="actividades" Type="Self.actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="actividades">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoAR">
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
+          <End Role="archivoprealum" Type="Self.archivoprealum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="archivoprealum">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoCA">
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
+          <End Role="calificacion" Type="Self.calificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="calificacion">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoMae">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="0..1" />
+          <End Role="actividades" Type="Self.actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="actividades">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoMat">
+          <End Role="materia" Type="Self.materia" Multiplicity="1" />
+          <End Role="actividades" Type="Self.actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="idMateria" />
+            </Principal>
+            <Dependent Role="actividades">
+              <PropertyRef Name="idMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoMO">
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
+          <End Role="libretamochalum" Type="Self.libretamochalum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="libretamochalum">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnosAR">
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
+          <End Role="archivodocalum" Type="Self.archivodocalum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="archivodocalum">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoT">
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
+          <End Role="tareas" Type="Self.tareas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="tareas">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="idAP">
+          <End Role="archivospizarronma" Type="Self.archivospizarronma" Multiplicity="1" />
+          <End Role="detallepizarron" Type="Self.detallepizarron" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="archivospizarronma">
+              <PropertyRef Name="idAP" />
+            </Principal>
+            <Dependent Role="detallepizarron">
+              <PropertyRef Name="idAP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroA">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
+          <End Role="archivodocmaestro" Type="Self.archivodocmaestro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="archivodocmaestro">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroL">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
+          <End Role="libretamochmaes" Type="Self.libretamochmaes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="libretamochmaes">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroM">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
+          <End Role="materia" Type="Self.materia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="materia">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroP">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
+          <End Role="archivospizarronma" Type="Self.archivospizarronma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="archivospizarronma">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroT">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
+          <End Role="tareas" Type="Self.tareas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="tareas">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MateriaCA">
+          <End Role="materia" Type="Self.materia" Multiplicity="1" />
+          <End Role="calificacion" Type="Self.calificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="idMateria" />
+            </Principal>
+            <Dependent Role="calificacion">
+              <PropertyRef Name="idMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MateriaT">
+          <End Role="materia" Type="Self.materia" Multiplicity="1" />
+          <End Role="tareas" Type="Self.tareas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="idMateria" />
+            </Principal>
+            <Dependent Role="tareas">
+              <PropertyRef Name="idMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="idPerfil" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="presentacion">
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
+          <End Role="archivopremaes" Type="Self.archivopremaes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="archivopremaes">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="seccion1">
+          <End Role="seccion" Type="Self.seccion" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seccion">
+              <PropertyRef Name="idSeccion" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idSeccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SeccionM">
+          <End Role="seccion" Type="Self.seccion" Multiplicity="1" />
+          <End Role="materia" Type="Self.materia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seccion">
+              <PropertyRef Name="idSeccion" />
+            </Principal>
+            <Dependent Role="materia">
+              <PropertyRef Name="idSeccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoMat">
+          <End Role="tipomateria" Type="Self.tipomateria" Multiplicity="1" />
+          <End Role="materia" Type="Self.materia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipomateria">
+              <PropertyRef Name="idTipoMateria" />
+            </Principal>
+            <Dependent Role="materia">
+              <PropertyRef Name="idTipoMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioA">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="alumnos" Type="Self.alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="alumnos">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioAD">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="administrador" Type="Self.administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="administrador">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioM">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="maestros" Type="Self.maestros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="maestros">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioP">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="padretutor" Type="Self.padretutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="padretutor">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="plataformaModelStoreContainer">
+          <EntitySet Name="actividades" EntityType="Self.actividades" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="administrador" EntityType="Self.administrador" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="alumnos" EntityType="Self.alumnos" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="archivodocalum" EntityType="Self.archivodocalum" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="archivodocmaestro" EntityType="Self.archivodocmaestro" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="archivoprealum" EntityType="Self.archivoprealum" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="archivopremaes" EntityType="Self.archivopremaes" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="archivospizarronma" EntityType="Self.archivospizarronma" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="calificacion" EntityType="Self.calificacion" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="detallepizarron" EntityType="Self.detallepizarron" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="examen" EntityType="Self.examen" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="generacionpreguntas" EntityType="Self.generacionpreguntas" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="graficacion" EntityType="Self.graficacion" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="inscripcion" EntityType="Self.inscripcion" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="libretamochalum" EntityType="Self.libretamochalum" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="libretamochmaes" EntityType="Self.libretamochmaes" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="maestros" EntityType="Self.maestros" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="materia" EntityType="Self.materia" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="padretutor" EntityType="Self.padretutor" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="seccion" EntityType="Self.seccion" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="seleccion" EntityType="Self.seleccion" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="tareas" EntityType="Self.tareas" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="tipomateria" EntityType="Self.tipomateria" Schema="plataforma" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="plataforma" store:Type="Tables" />
+          <AssociationSet Name="AlumnoAc" Association="Self.AlumnoAc">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="actividades" EntitySet="actividades" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoAR" Association="Self.AlumnoAR">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="archivoprealum" EntitySet="archivoprealum" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoCA" Association="Self.AlumnoCA">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="calificacion" EntitySet="calificacion" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoMae" Association="Self.AlumnoMae">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="actividades" EntitySet="actividades" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoMat" Association="Self.AlumnoMat">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="actividades" EntitySet="actividades" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoMO" Association="Self.AlumnoMO">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="libretamochalum" EntitySet="libretamochalum" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnosAR" Association="Self.AlumnosAR">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="archivodocalum" EntitySet="archivodocalum" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoT" Association="Self.AlumnoT">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="tareas" EntitySet="tareas" />
+          </AssociationSet>
+          <AssociationSet Name="idAP" Association="Self.idAP">
+            <End Role="archivospizarronma" EntitySet="archivospizarronma" />
+            <End Role="detallepizarron" EntitySet="detallepizarron" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroA" Association="Self.MaestroA">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="archivodocmaestro" EntitySet="archivodocmaestro" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroL" Association="Self.MaestroL">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="libretamochmaes" EntitySet="libretamochmaes" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroM" Association="Self.MaestroM">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="materia" EntitySet="materia" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroP" Association="Self.MaestroP">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="archivospizarronma" EntitySet="archivospizarronma" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroT" Association="Self.MaestroT">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="tareas" EntitySet="tareas" />
+          </AssociationSet>
+          <AssociationSet Name="MateriaCA" Association="Self.MateriaCA">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="calificacion" EntitySet="calificacion" />
+          </AssociationSet>
+          <AssociationSet Name="MateriaT" Association="Self.MateriaT">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="tareas" EntitySet="tareas" />
+          </AssociationSet>
+          <AssociationSet Name="perfil1" Association="Self.perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="presentacion" Association="Self.presentacion">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="archivopremaes" EntitySet="archivopremaes" />
+          </AssociationSet>
+          <AssociationSet Name="seccion1" Association="Self.seccion1">
+            <End Role="seccion" EntitySet="seccion" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="SeccionM" Association="Self.SeccionM">
+            <End Role="seccion" EntitySet="seccion" />
+            <End Role="materia" EntitySet="materia" />
+          </AssociationSet>
+          <AssociationSet Name="TipoMat" Association="Self.TipoMat">
+            <End Role="tipomateria" EntitySet="tipomateria" />
+            <End Role="materia" EntitySet="materia" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioA" Association="Self.usuarioA">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="alumnos" EntitySet="alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioAD" Association="Self.usuarioAD">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="administrador" EntitySet="administrador" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioM" Association="Self.usuarioM">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="maestros" EntitySet="maestros" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioP" Association="Self.usuarioP">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="padretutor" EntitySet="padretutor" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="plataformaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="plataformaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="actividades" EntityType="plataformaModel.actividades" />
+          <EntitySet Name="administrador" EntityType="plataformaModel.administrador" />
+          <EntitySet Name="alumnos" EntityType="plataformaModel.alumnos" />
+          <EntitySet Name="archivodocalum" EntityType="plataformaModel.archivodocalum" />
+          <EntitySet Name="archivodocmaestro" EntityType="plataformaModel.archivodocmaestro" />
+          <EntitySet Name="archivoprealum" EntityType="plataformaModel.archivoprealum" />
+          <EntitySet Name="archivopremaes" EntityType="plataformaModel.archivopremaes" />
+          <EntitySet Name="archivospizarronma" EntityType="plataformaModel.archivospizarronma" />
+          <EntitySet Name="calificacion" EntityType="plataformaModel.calificacion" />
+          <EntitySet Name="detallepizarron" EntityType="plataformaModel.detallepizarron" />
+          <EntitySet Name="examen" EntityType="plataformaModel.examen" />
+          <EntitySet Name="generacionpreguntas" EntityType="plataformaModel.generacionpreguntas" />
+          <EntitySet Name="graficacion" EntityType="plataformaModel.graficacion" />
+          <EntitySet Name="inscripcion" EntityType="plataformaModel.inscripcion" />
+          <EntitySet Name="libretamochalum" EntityType="plataformaModel.libretamochalum" />
+          <EntitySet Name="libretamochmaes" EntityType="plataformaModel.libretamochmaes" />
+          <EntitySet Name="maestros" EntityType="plataformaModel.maestros" />
+          <EntitySet Name="materia" EntityType="plataformaModel.materia" />
+          <EntitySet Name="padretutor" EntityType="plataformaModel.padretutor" />
+          <EntitySet Name="perfil" EntityType="plataformaModel.perfil" />
+          <EntitySet Name="seccion" EntityType="plataformaModel.seccion" />
+          <EntitySet Name="seleccion" EntityType="plataformaModel.seleccion" />
+          <EntitySet Name="tareas" EntityType="plataformaModel.tareas" />
+          <EntitySet Name="tipomateria" EntityType="plataformaModel.tipomateria" />
+          <EntitySet Name="usuario" EntityType="plataformaModel.usuario" />
+          <AssociationSet Name="AlumnoAc" Association="plataformaModel.AlumnoAc">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="actividades" EntitySet="actividades" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoMae" Association="plataformaModel.AlumnoMae">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="actividades" EntitySet="actividades" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoMat" Association="plataformaModel.AlumnoMat">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="actividades" EntitySet="actividades" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioAD" Association="plataformaModel.usuarioAD">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="administrador" EntitySet="administrador" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoAR" Association="plataformaModel.AlumnoAR">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="archivoprealum" EntitySet="archivoprealum" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoCA" Association="plataformaModel.AlumnoCA">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="calificacion" EntitySet="calificacion" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoMO" Association="plataformaModel.AlumnoMO">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="libretamochalum" EntitySet="libretamochalum" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnosAR" Association="plataformaModel.AlumnosAR">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="archivodocalum" EntitySet="archivodocalum" />
+          </AssociationSet>
+          <AssociationSet Name="AlumnoT" Association="plataformaModel.AlumnoT">
+            <End Role="alumnos" EntitySet="alumnos" />
+            <End Role="tareas" EntitySet="tareas" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioA" Association="plataformaModel.usuarioA">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="alumnos" EntitySet="alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroA" Association="plataformaModel.MaestroA">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="archivodocmaestro" EntitySet="archivodocmaestro" />
+          </AssociationSet>
+          <AssociationSet Name="presentacion" Association="plataformaModel.presentacion">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="archivopremaes" EntitySet="archivopremaes" />
+          </AssociationSet>
+          <AssociationSet Name="idAP" Association="plataformaModel.idAP">
+            <End Role="archivospizarronma" EntitySet="archivospizarronma" />
+            <End Role="detallepizarron" EntitySet="detallepizarron" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroP" Association="plataformaModel.MaestroP">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="archivospizarronma" EntitySet="archivospizarronma" />
+          </AssociationSet>
+          <AssociationSet Name="MateriaCA" Association="plataformaModel.MateriaCA">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="calificacion" EntitySet="calificacion" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroL" Association="plataformaModel.MaestroL">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="libretamochmaes" EntitySet="libretamochmaes" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroM" Association="plataformaModel.MaestroM">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="materia" EntitySet="materia" />
+          </AssociationSet>
+          <AssociationSet Name="MaestroT" Association="plataformaModel.MaestroT">
+            <End Role="maestros" EntitySet="maestros" />
+            <End Role="tareas" EntitySet="tareas" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioM" Association="plataformaModel.usuarioM">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="maestros" EntitySet="maestros" />
+          </AssociationSet>
+          <AssociationSet Name="MateriaT" Association="plataformaModel.MateriaT">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="tareas" EntitySet="tareas" />
+          </AssociationSet>
+          <AssociationSet Name="SeccionM" Association="plataformaModel.SeccionM">
+            <End Role="seccion" EntitySet="seccion" />
+            <End Role="materia" EntitySet="materia" />
+          </AssociationSet>
+          <AssociationSet Name="TipoMat" Association="plataformaModel.TipoMat">
+            <End Role="tipomateria" EntitySet="tipomateria" />
+            <End Role="materia" EntitySet="materia" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioP" Association="plataformaModel.usuarioP">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="padretutor" EntitySet="padretutor" />
+          </AssociationSet>
+          <AssociationSet Name="perfil1" Association="plataformaModel.perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="seccion1" Association="plataformaModel.seccion1">
+            <End Role="seccion" EntitySet="seccion" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="actividades">
+          <Key>
+            <PropertyRef Name="idActividad" />
+          </Key>
+          <Property Name="idActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="idMateria" Type="Int32" Nullable="false" />
+          <Property Name="NombreA" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Tema" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Calificacion" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="FechaEntrega" Type="DateTime" Nullable="false" />
+          <Property Name="Detalle" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="TempoActividad" Type="Time" Nullable="false" />
+          <Property Name="ValorA" Type="Int32" Nullable="false" />
+          <Property Name="idMaestro" Type="Int32" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoAc" FromRole="actividades" ToRole="alumnos" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.AlumnoMae" FromRole="actividades" ToRole="maestros" />
+          <NavigationProperty Name="materia" Relationship="plataformaModel.AlumnoMat" FromRole="actividades" ToRole="materia" />
+        </EntityType>
+        <EntityType Name="administrador">
+          <Key>
+            <PropertyRef Name="idAdministrador" />
+          </Key>
+          <Property Name="idAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioAD" FromRole="administrador" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="alumnos">
+          <Key>
+            <PropertyRef Name="idAlumno" />
+          </Key>
+          <Property Name="idAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoAc" FromRole="alumnos" ToRole="actividades" />
+          <NavigationProperty Name="archivoprealum" Relationship="plataformaModel.AlumnoAR" FromRole="alumnos" ToRole="archivoprealum" />
+          <NavigationProperty Name="calificacion" Relationship="plataformaModel.AlumnoCA" FromRole="alumnos" ToRole="calificacion" />
+          <NavigationProperty Name="libretamochalum" Relationship="plataformaModel.AlumnoMO" FromRole="alumnos" ToRole="libretamochalum" />
+          <NavigationProperty Name="archivodocalum" Relationship="plataformaModel.AlumnosAR" FromRole="alumnos" ToRole="archivodocalum" />
+          <NavigationProperty Name="tareas" Relationship="plataformaModel.AlumnoT" FromRole="alumnos" ToRole="tareas" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioA" FromRole="alumnos" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="archivodocalum">
+          <Key>
+            <PropertyRef Name="idArchivoDA" />
+          </Key>
+          <Property Name="idArchivoDA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Boolean" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnosAR" FromRole="archivodocalum" ToRole="alumnos" />
+        </EntityType>
+        <EntityType Name="archivodocmaestro">
+          <Key>
+            <PropertyRef Name="idArchivoDM" />
+          </Key>
+          <Property Name="idArchivoDM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Boolean" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.MaestroA" FromRole="archivodocmaestro" ToRole="maestros" />
+        </EntityType>
+        <EntityType Name="archivoprealum">
+          <Key>
+            <PropertyRef Name="idArchivoPA" />
+          </Key>
+          <Property Name="idArchivoPA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Boolean" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoAR" FromRole="archivoprealum" ToRole="alumnos" />
+        </EntityType>
+        <EntityType Name="archivopremaes">
+          <Key>
+            <PropertyRef Name="idArchivoPM" />
+          </Key>
+          <Property Name="idArchivoPM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Boolean" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="Descricion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.presentacion" FromRole="archivopremaes" ToRole="maestros" />
+        </EntityType>
+        <EntityType Name="archivospizarronma">
+          <Key>
+            <PropertyRef Name="idAP" />
+          </Key>
+          <Property Name="idAP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCracion" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="detallepizarron" Relationship="plataformaModel.idAP" FromRole="archivospizarronma" ToRole="detallepizarron" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.MaestroP" FromRole="archivospizarronma" ToRole="maestros" />
+        </EntityType>
+        <EntityType Name="calificacion">
+          <Key>
+            <PropertyRef Name="idCalificacion" />
+          </Key>
+          <Property Name="idCalificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMateria" Type="Int32" Nullable="false" />
+          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="Calificacion1" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoCA" FromRole="calificacion" ToRole="alumnos" />
+          <NavigationProperty Name="materia" Relationship="plataformaModel.MateriaCA" FromRole="calificacion" ToRole="materia" />
+        </EntityType>
+        <EntityType Name="detallepizarron">
+          <Key>
+            <PropertyRef Name="idDetallePizarron" />
+          </Key>
+          <Property Name="idDetallePizarron" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAP" Type="Int32" Nullable="false" />
+          <Property Name="Documento" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="archivospizarronma" Relationship="plataformaModel.idAP" FromRole="detallepizarron" ToRole="archivospizarronma" />
+        </EntityType>
+        <EntityType Name="examen">
+          <Key>
+            <PropertyRef Name="idExamen" />
+          </Key>
+          <Property Name="idExamen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="generacionpreguntas">
+          <Key>
+            <PropertyRef Name="idGeneracion_Preguntas" />
+          </Key>
+          <Property Name="idGeneracion_Preguntas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="graficacion">
+          <Key>
+            <PropertyRef Name="idGraficacion" />
+          </Key>
+          <Property Name="idGraficacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="D1" Type="Single" Nullable="false" />
+          <Property Name="D2" Type="Single" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inscripcion">
+          <Key>
+            <PropertyRef Name="idInscripcion" />
+          </Key>
+          <Property Name="idInscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNac" Type="DateTime" Nullable="false" />
+          <Property Name="FechaInscripcion" Type="DateTime" Nullable="false" />
+          <Property Name="Edad" Type="Int32" Nullable="false" />
+          <Property Name="idSeccion" Type="Int32" Nullable="false" />
+          <Property Name="Grado" Type="Int32" Nullable="false" />
+          <Property Name="Grupo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AlergiasEnfermedad" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Observacion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="NombreT" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Ocupacion" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelCasa" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TelTrabajo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="libretamochalum">
+          <Key>
+            <PropertyRef Name="idLibMA" />
+          </Key>
+          <Property Name="idLibMA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="NombreLib" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Tema" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Documento" Type="Boolean" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoMO" FromRole="libretamochalum" ToRole="alumnos" />
+        </EntityType>
+        <EntityType Name="libretamochmaes">
+          <Key>
+            <PropertyRef Name="idLibMM" />
+          </Key>
+          <Property Name="idLibMM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="NombreLib" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Documento" Type="Boolean" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.MaestroL" FromRole="libretamochmaes" ToRole="maestros" />
+        </EntityType>
+        <EntityType Name="maestros">
+          <Key>
+            <PropertyRef Name="idMaestro" />
+          </Key>
+          <Property Name="idMaestro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoMae" FromRole="maestros" ToRole="actividades" />
+          <NavigationProperty Name="archivodocmaestro" Relationship="plataformaModel.MaestroA" FromRole="maestros" ToRole="archivodocmaestro" />
+          <NavigationProperty Name="archivopremaes" Relationship="plataformaModel.presentacion" FromRole="maestros" ToRole="archivopremaes" />
+          <NavigationProperty Name="archivospizarronma" Relationship="plataformaModel.MaestroP" FromRole="maestros" ToRole="archivospizarronma" />
+          <NavigationProperty Name="libretamochmaes" Relationship="plataformaModel.MaestroL" FromRole="maestros" ToRole="libretamochmaes" />
+          <NavigationProperty Name="materia" Relationship="plataformaModel.MaestroM" FromRole="maestros" ToRole="materia" />
+          <NavigationProperty Name="tareas" Relationship="plataformaModel.MaestroT" FromRole="maestros" ToRole="tareas" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioM" FromRole="maestros" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="materia">
+          <Key>
+            <PropertyRef Name="idMateria" />
+          </Key>
+          <Property Name="idMateria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSeccion" Type="Int32" Nullable="false" />
+          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="Materia1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoM" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FechaIN" Type="DateTime" Nullable="false" />
+          <Property Name="FechaFI" Type="DateTime" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Grado" Type="Int32" Nullable="false" />
+          <Property Name="Grupo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="idTipoMateria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoMat" FromRole="materia" ToRole="actividades" />
+          <NavigationProperty Name="calificacion" Relationship="plataformaModel.MateriaCA" FromRole="materia" ToRole="calificacion" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.MaestroM" FromRole="materia" ToRole="maestros" />
+          <NavigationProperty Name="tareas" Relationship="plataformaModel.MateriaT" FromRole="materia" ToRole="tareas" />
+          <NavigationProperty Name="seccion" Relationship="plataformaModel.SeccionM" FromRole="materia" ToRole="seccion" />
+          <NavigationProperty Name="tipomateria" Relationship="plataformaModel.TipoMat" FromRole="materia" ToRole="tipomateria" />
+        </EntityType>
+        <EntityType Name="padretutor">
+          <Key>
+            <PropertyRef Name="idPadre" />
+          </Key>
+          <Property Name="idPadre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioP" FromRole="padretutor" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="idPerfil" />
+          </Key>
+          <Property Name="idPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.perfil1" FromRole="perfil" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="seccion">
+          <Key>
+            <PropertyRef Name="idSeccion" />
+          </Key>
+          <Property Name="idSeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="materia" Relationship="plataformaModel.SeccionM" FromRole="seccion" ToRole="materia" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.seccion1" FromRole="seccion" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="seleccion">
+          <Key>
+            <PropertyRef Name="idSeleccion" />
+          </Key>
+          <Property Name="idSeleccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Seccion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Materia" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Bimestre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tareas">
+          <Key>
+            <PropertyRef Name="idTarea" />
+          </Key>
+          <Property Name="idTarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="idMateria" Type="Int32" Nullable="false" />
+          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="NombreT" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Tema" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="CalificacionA" Type="Int32" Nullable="false" />
+          <Property Name="CalificacionR" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="Fecha_E" Type="DateTime" Nullable="false" />
+          <Property Name="Detalle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoT" FromRole="tareas" ToRole="alumnos" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.MaestroT" FromRole="tareas" ToRole="maestros" />
+          <NavigationProperty Name="materia" Relationship="plataformaModel.MateriaT" FromRole="tareas" ToRole="materia" />
+        </EntityType>
+        <EntityType Name="tipomateria">
+          <Key>
+            <PropertyRef Name="idTipoMateria" />
+          </Key>
+          <Property Name="idTipoMateria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="materia" Relationship="plataformaModel.TipoMat" FromRole="tipomateria" ToRole="materia" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Foto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idSeccion" Type="Int32" Nullable="false" />
+          <Property Name="idPerfil" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="administrador" Relationship="plataformaModel.usuarioAD" FromRole="usuario" ToRole="administrador" />
+          <NavigationProperty Name="alumnos" Relationship="plataformaModel.usuarioA" FromRole="usuario" ToRole="alumnos" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.usuarioM" FromRole="usuario" ToRole="maestros" />
+          <NavigationProperty Name="padretutor" Relationship="plataformaModel.usuarioP" FromRole="usuario" ToRole="padretutor" />
+          <NavigationProperty Name="perfil" Relationship="plataformaModel.perfil1" FromRole="usuario" ToRole="perfil" />
+          <NavigationProperty Name="seccion" Relationship="plataformaModel.seccion1" FromRole="usuario" ToRole="seccion" />
+        </EntityType>
+        <Association Name="AlumnoAc">
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="1" />
+          <End Type="plataformaModel.actividades" Role="actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="actividades">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoMae">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="0..1" />
+          <End Type="plataformaModel.actividades" Role="actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="actividades">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoMat">
+          <End Type="plataformaModel.materia" Role="materia" Multiplicity="1" />
+          <End Type="plataformaModel.actividades" Role="actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="idMateria" />
+            </Principal>
+            <Dependent Role="actividades">
+              <PropertyRef Name="idMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioAD">
+          <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="plataformaModel.administrador" Role="administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="administrador">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoAR">
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="1" />
+          <End Type="plataformaModel.archivoprealum" Role="archivoprealum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="archivoprealum">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoCA">
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="1" />
+          <End Type="plataformaModel.calificacion" Role="calificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="calificacion">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoMO">
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="1" />
+          <End Type="plataformaModel.libretamochalum" Role="libretamochalum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="libretamochalum">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnosAR">
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="1" />
+          <End Type="plataformaModel.archivodocalum" Role="archivodocalum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="archivodocalum">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlumnoT">
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="1" />
+          <End Type="plataformaModel.tareas" Role="tareas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumnos">
+              <PropertyRef Name="idAlumno" />
+            </Principal>
+            <Dependent Role="tareas">
+              <PropertyRef Name="idAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioA">
+          <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="plataformaModel.alumnos" Role="alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="alumnos">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroA">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
+          <End Type="plataformaModel.archivodocmaestro" Role="archivodocmaestro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="archivodocmaestro">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="presentacion">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
+          <End Type="plataformaModel.archivopremaes" Role="archivopremaes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="archivopremaes">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="idAP">
+          <End Type="plataformaModel.archivospizarronma" Role="archivospizarronma" Multiplicity="1" />
+          <End Type="plataformaModel.detallepizarron" Role="detallepizarron" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="archivospizarronma">
+              <PropertyRef Name="idAP" />
+            </Principal>
+            <Dependent Role="detallepizarron">
+              <PropertyRef Name="idAP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroP">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
+          <End Type="plataformaModel.archivospizarronma" Role="archivospizarronma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="archivospizarronma">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MateriaCA">
+          <End Type="plataformaModel.materia" Role="materia" Multiplicity="1" />
+          <End Type="plataformaModel.calificacion" Role="calificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="idMateria" />
+            </Principal>
+            <Dependent Role="calificacion">
+              <PropertyRef Name="idMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroL">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
+          <End Type="plataformaModel.libretamochmaes" Role="libretamochmaes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="libretamochmaes">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroM">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
+          <End Type="plataformaModel.materia" Role="materia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="materia">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaestroT">
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
+          <End Type="plataformaModel.tareas" Role="tareas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maestros">
+              <PropertyRef Name="idMaestro" />
+            </Principal>
+            <Dependent Role="tareas">
+              <PropertyRef Name="idMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioM">
+          <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="maestros">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MateriaT">
+          <End Type="plataformaModel.materia" Role="materia" Multiplicity="1" />
+          <End Type="plataformaModel.tareas" Role="tareas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="idMateria" />
+            </Principal>
+            <Dependent Role="tareas">
+              <PropertyRef Name="idMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SeccionM">
+          <End Type="plataformaModel.seccion" Role="seccion" Multiplicity="1" />
+          <End Type="plataformaModel.materia" Role="materia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seccion">
+              <PropertyRef Name="idSeccion" />
+            </Principal>
+            <Dependent Role="materia">
+              <PropertyRef Name="idSeccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoMat">
+          <End Type="plataformaModel.tipomateria" Role="tipomateria" Multiplicity="1" />
+          <End Type="plataformaModel.materia" Role="materia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipomateria">
+              <PropertyRef Name="idTipoMateria" />
+            </Principal>
+            <Dependent Role="materia">
+              <PropertyRef Name="idTipoMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioP">
+          <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="plataformaModel.padretutor" Role="padretutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="padretutor">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="perfil1">
+          <End Type="plataformaModel.perfil" Role="perfil" Multiplicity="1" />
+          <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="idPerfil" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="seccion1">
+          <End Type="plataformaModel.seccion" Role="seccion" Multiplicity="1" />
+          <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seccion">
+              <PropertyRef Name="idSeccion" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idSeccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="plataformaModelStoreContainer" CdmEntityContainer="plataformaEntities">
+          <EntitySetMapping Name="actividades">
+            <EntityTypeMapping TypeName="plataformaModel.actividades">
+              <MappingFragment StoreEntitySet="actividades">
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="ValorA" ColumnName="ValorA" />
+                <ScalarProperty Name="TempoActividad" ColumnName="TempoActividad" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="Tema" ColumnName="Tema" />
+                <ScalarProperty Name="NombreA" ColumnName="NombreA" />
+                <ScalarProperty Name="idMateria" ColumnName="idMateria" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+                <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="administrador">
+            <EntityTypeMapping TypeName="plataformaModel.administrador">
+              <MappingFragment StoreEntitySet="administrador">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="APM" ColumnName="APM" />
+                <ScalarProperty Name="APP" ColumnName="APP" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idAdministrador" ColumnName="idAdministrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="alumnos">
+            <EntityTypeMapping TypeName="plataformaModel.alumnos">
+              <MappingFragment StoreEntitySet="alumnos">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="APM" ColumnName="APM" />
+                <ScalarProperty Name="APP" ColumnName="APP" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="archivodocalum">
+            <EntityTypeMapping TypeName="plataformaModel.archivodocalum">
+              <MappingFragment StoreEntitySet="archivodocalum">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+                <ScalarProperty Name="idArchivoDA" ColumnName="idArchivoDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="archivodocmaestro">
+            <EntityTypeMapping TypeName="plataformaModel.archivodocmaestro">
+              <MappingFragment StoreEntitySet="archivodocmaestro">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="idArchivoDM" ColumnName="idArchivoDM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="archivoprealum">
+            <EntityTypeMapping TypeName="plataformaModel.archivoprealum">
+              <MappingFragment StoreEntitySet="archivoprealum">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+                <ScalarProperty Name="idArchivoPA" ColumnName="idArchivoPA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="archivopremaes">
+            <EntityTypeMapping TypeName="plataformaModel.archivopremaes">
+              <MappingFragment StoreEntitySet="archivopremaes">
+                <ScalarProperty Name="Descricion" ColumnName="Descricion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="idArchivoPM" ColumnName="idArchivoPM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="archivospizarronma">
+            <EntityTypeMapping TypeName="plataformaModel.archivospizarronma">
+              <MappingFragment StoreEntitySet="archivospizarronma">
+                <ScalarProperty Name="FechaCracion" ColumnName="FechaCracion" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="idAP" ColumnName="idAP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="calificacion">
+            <EntityTypeMapping TypeName="plataformaModel.calificacion">
+              <MappingFragment StoreEntitySet="calificacion">
+                <ScalarProperty Name="Calificacion1" ColumnName="Calificacion" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+                <ScalarProperty Name="idMateria" ColumnName="idMateria" />
+                <ScalarProperty Name="idCalificacion" ColumnName="idCalificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detallepizarron">
+            <EntityTypeMapping TypeName="plataformaModel.detallepizarron">
+              <MappingFragment StoreEntitySet="detallepizarron">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="idAP" ColumnName="idAP" />
+                <ScalarProperty Name="idDetallePizarron" ColumnName="idDetallePizarron" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="examen">
+            <EntityTypeMapping TypeName="plataformaModel.examen">
+              <MappingFragment StoreEntitySet="examen">
+                <ScalarProperty Name="idExamen" ColumnName="idExamen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="generacionpreguntas">
+            <EntityTypeMapping TypeName="plataformaModel.generacionpreguntas">
+              <MappingFragment StoreEntitySet="generacionpreguntas">
+                <ScalarProperty Name="idGeneracion_Preguntas" ColumnName="idGeneracion Preguntas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="graficacion">
+            <EntityTypeMapping TypeName="plataformaModel.graficacion">
+              <MappingFragment StoreEntitySet="graficacion">
+                <ScalarProperty Name="D2" ColumnName="D2" />
+                <ScalarProperty Name="D1" ColumnName="D1" />
+                <ScalarProperty Name="idGraficacion" ColumnName="idGraficacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inscripcion">
+            <EntityTypeMapping TypeName="plataformaModel.inscripcion">
+              <MappingFragment StoreEntitySet="inscripcion">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="TelTrabajo" ColumnName="TelTrabajo" />
+                <ScalarProperty Name="TelCasa" ColumnName="TelCasa" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="NombreT" ColumnName="NombreT" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="AlergiasEnfermedad" ColumnName="AlergiasEnfermedad" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+                <ScalarProperty Name="Grado" ColumnName="Grado" />
+                <ScalarProperty Name="idSeccion" ColumnName="idSeccion" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="FechaInscripcion" ColumnName="FechaInscripcion" />
+                <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idInscripcion" ColumnName="idInscripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="libretamochalum">
+            <EntityTypeMapping TypeName="plataformaModel.libretamochalum">
+              <MappingFragment StoreEntitySet="libretamochalum">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="Tema" ColumnName="Tema" />
+                <ScalarProperty Name="NombreLib" ColumnName="NombreLib" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+                <ScalarProperty Name="idLibMA" ColumnName="idLibMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="libretamochmaes">
+            <EntityTypeMapping TypeName="plataformaModel.libretamochmaes">
+              <MappingFragment StoreEntitySet="libretamochmaes">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="NombreLib" ColumnName="NombreLib" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="idLibMM" ColumnName="idLibMM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="maestros">
+            <EntityTypeMapping TypeName="plataformaModel.maestros">
+              <MappingFragment StoreEntitySet="maestros">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="APM" ColumnName="APM" />
+                <ScalarProperty Name="APP" ColumnName="APP" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="materia">
+            <EntityTypeMapping TypeName="plataformaModel.materia">
+              <MappingFragment StoreEntitySet="materia">
+                <ScalarProperty Name="idTipoMateria" ColumnName="idTipoMateria" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+                <ScalarProperty Name="Grado" ColumnName="Grado" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaFI" ColumnName="FechaFI" />
+                <ScalarProperty Name="FechaIN" ColumnName="FechaIN" />
+                <ScalarProperty Name="CodigoM" ColumnName="CodigoM" />
+                <ScalarProperty Name="Materia1" ColumnName="Materia" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="idSeccion" ColumnName="idSeccion" />
+                <ScalarProperty Name="idMateria" ColumnName="idMateria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="padretutor">
+            <EntityTypeMapping TypeName="plataformaModel.padretutor">
+              <MappingFragment StoreEntitySet="padretutor">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="APM" ColumnName="APM" />
+                <ScalarProperty Name="APP" ColumnName="APP" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idPadre" ColumnName="idPadre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="perfil">
+            <EntityTypeMapping TypeName="plataformaModel.perfil">
+              <MappingFragment StoreEntitySet="perfil">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="NombreP" ColumnName="NombreP" />
+                <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seccion">
+            <EntityTypeMapping TypeName="plataformaModel.seccion">
+              <MappingFragment StoreEntitySet="seccion">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idSeccion" ColumnName="idSeccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seleccion">
+            <EntityTypeMapping TypeName="plataformaModel.seleccion">
+              <MappingFragment StoreEntitySet="seleccion">
+                <ScalarProperty Name="Bimestre" ColumnName="Bimestre" />
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="Seccion" ColumnName="Seccion" />
+                <ScalarProperty Name="idSeleccion" ColumnName="idSeleccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tareas">
+            <EntityTypeMapping TypeName="plataformaModel.tareas">
+              <MappingFragment StoreEntitySet="tareas">
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Fecha_E" ColumnName="Fecha_E" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="CalificacionR" ColumnName="CalificacionR" />
+                <ScalarProperty Name="CalificacionA" ColumnName="CalificacionA" />
+                <ScalarProperty Name="Tema" ColumnName="Tema" />
+                <ScalarProperty Name="NombreT" ColumnName="NombreT" />
+                <ScalarProperty Name="idMaestro" ColumnName="idMaestro" />
+                <ScalarProperty Name="idMateria" ColumnName="idMateria" />
+                <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipomateria">
+            <EntityTypeMapping TypeName="plataformaModel.tipomateria">
+              <MappingFragment StoreEntitySet="tipomateria">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idTipoMateria" ColumnName="idTipoMateria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="plataformaModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
+                <ScalarProperty Name="idSeccion" ColumnName="idSeccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="APM" ColumnName="APM" />
+                <ScalarProperty Name="APP" ColumnName="APP" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
