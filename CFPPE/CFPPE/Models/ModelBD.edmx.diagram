@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e6718205ac9646f3912b1e27812b5e26" Name="Diagram1">
+        <EntityTypeShape EntityType="plataformaModel.actividades" Width="1.5" PointX="15.5" PointY="22.5" />
+        <EntityTypeShape EntityType="plataformaModel.administrador" Width="1.5" PointX="8.25" PointY="22.25" />
+        <EntityTypeShape EntityType="plataformaModel.alumnos" Width="1.5" PointX="8.25" PointY="15" />
+        <EntityTypeShape EntityType="plataformaModel.archivodocalum" Width="1.5" PointX="10.5" PointY="16" />
+        <EntityTypeShape EntityType="plataformaModel.archivodocmaestro" Width="1.5" PointX="10.5" PointY="29" />
+        <EntityTypeShape EntityType="plataformaModel.archivoprealum" Width="1.5" PointX="10.5" PointY="12.875" />
+        <EntityTypeShape EntityType="plataformaModel.archivopremaes" Width="1.5" PointX="10.5" PointY="32.125" />
+        <EntityTypeShape EntityType="plataformaModel.archivospizarronma" Width="1.5" PointX="10.5" PointY="26.125" />
+        <EntityTypeShape EntityType="plataformaModel.calificacion" Width="1.5" PointX="13.5" PointY="19.125" />
+        <EntityTypeShape EntityType="plataformaModel.detallepizarron" Width="1.5" PointX="12.75" PointY="26.125" />
+        <EntityTypeShape EntityType="plataformaModel.examen" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="plataformaModel.generacionpreguntas" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="plataformaModel.graficacion" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="plataformaModel.inscripcion" Width="1.5" PointX="2.75" PointY="2.75" />
+        <EntityTypeShape EntityType="plataformaModel.libretamochalum" Width="1.5" PointX="10.5" PointY="19.125" />
+        <EntityTypeShape EntityType="plataformaModel.libretamochmaes" Width="1.5" PointX="10.5" PointY="35.25" />
+        <EntityTypeShape EntityType="plataformaModel.maestros" Width="1.5" PointX="8.25" PointY="29.5" />
+        <EntityTypeShape EntityType="plataformaModel.materia" Width="1.5" PointX="3" PointY="21" />
+        <EntityTypeShape EntityType="plataformaModel.padretutor" Width="1.5" PointX="8.25" PointY="9" />
+        <EntityTypeShape EntityType="plataformaModel.perfil" Width="1.5" PointX="3.75" PointY="18.25" />
+        <EntityTypeShape EntityType="plataformaModel.seccion" Width="1.5" PointX="0.75" PointY="22.125" />
+        <EntityTypeShape EntityType="plataformaModel.seleccion" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="plataformaModel.tareas" Width="1.5" PointX="15.5" PointY="27.5" />
+        <EntityTypeShape EntityType="plataformaModel.tipomateria" Width="1.5" PointX="0.75" PointY="19" />
+        <EntityTypeShape EntityType="plataformaModel.usuario" Width="1.5" PointX="6" PointY="21" />
+        <AssociationConnector Association="plataformaModel.AlumnoAc" />
+        <AssociationConnector Association="plataformaModel.AlumnoMae" />
+        <AssociationConnector Association="plataformaModel.AlumnoMat" />
+        <AssociationConnector Association="plataformaModel.usuarioAD" />
+        <AssociationConnector Association="plataformaModel.AlumnoAR" />
+        <AssociationConnector Association="plataformaModel.AlumnoCA" />
+        <AssociationConnector Association="plataformaModel.AlumnoMO" />
+        <AssociationConnector Association="plataformaModel.AlumnosAR" />
+        <AssociationConnector Association="plataformaModel.AlumnoT" />
+        <AssociationConnector Association="plataformaModel.usuarioA" />
+        <AssociationConnector Association="plataformaModel.MaestroA" />
+        <AssociationConnector Association="plataformaModel.presentacion" />
+        <AssociationConnector Association="plataformaModel.idAP" />
+        <AssociationConnector Association="plataformaModel.MaestroP" />
+        <AssociationConnector Association="plataformaModel.MateriaCA" />
+        <AssociationConnector Association="plataformaModel.MaestroL" />
+        <AssociationConnector Association="plataformaModel.MaestroM" />
+        <AssociationConnector Association="plataformaModel.MaestroT" />
+        <AssociationConnector Association="plataformaModel.usuarioM" />
+        <AssociationConnector Association="plataformaModel.MateriaT" />
+        <AssociationConnector Association="plataformaModel.SeccionM" />
+        <AssociationConnector Association="plataformaModel.TipoMat" />
+        <AssociationConnector Association="plataformaModel.usuarioP" />
+        <AssociationConnector Association="plataformaModel.perfil1" />
+        <AssociationConnector Association="plataformaModel.seccion1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
