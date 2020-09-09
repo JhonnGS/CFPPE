@@ -169,8 +169,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\alumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -422,11 +422,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\alumnos\Create.cshtml" />
-    <Content Include="Views\alumnos\Delete.cshtml" />
-    <Content Include="Views\alumnos\Details.cshtml" />
-    <Content Include="Views\alumnos\Edit.cshtml" />
-    <Content Include="Views\alumnos\Index.cshtml" />
+    <Content Include="Views\RegUser\Create.cshtml" />
+    <Content Include="Views\RegUser\Delete.cshtml" />
+    <Content Include="Views\RegUser\Details.cshtml" />
+    <Content Include="Views\RegUser\Edit.cshtml" />
+    <Content Include="Views\RegUser\Index.cshtml" />
+    <Content Include="Views\Shared\MasterPageAl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

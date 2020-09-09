@@ -10,112 +10,116 @@ using CFPPE.Models;
 
 namespace CFPPE.Controllers
 {
-    public class alumnosController : Controller
+    public class RegUserController : Controller
     {
         private plataformaEntities db = new plataformaEntities();
 
-        // GET: alumnos
+        // GET: RegUser
         public ActionResult Index()
         {
-            var alumnos = db.alumnos.Include(a => a.usuario);
-            return View(alumnos.ToList());
+            var usuario = db.usuario.Include(u => u.perfil).Include(u => u.seccion);
+            return View(usuario.ToList());
         }
 
-        // GET: alumnos/Details/5
+        // GET: RegUser/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alumnos alumnos = db.alumnos.Find(id);
-            if (alumnos == null)
+            usuario usuario = db.usuario.Find(id);
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
-            return View(alumnos);
+            return View(usuario);
         }
 
-        // GET: alumnos/Create
+        // GET: RegUser/Create
         public ActionResult Create()
         {
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre");
+            ViewBag.idPerfil = new SelectList(db.perfil, "idPerfil", "NombreP");
+            ViewBag.idSeccion = new SelectList(db.seccion, "idSeccion", "Nombre");
             return View();
         }
 
-        // POST: alumnos/Create
+        // POST: RegUser/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idAlumno,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idUsuario")] alumnos alumnos)
+        public ActionResult Create([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil")] usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.alumnos.Add(alumnos);
+                db.usuario.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", alumnos.idUsuario);
-            return View(alumnos);
+            ViewBag.idPerfil = new SelectList(db.perfil, "idPerfil", "NombreP", usuario.idPerfil);
+            ViewBag.idSeccion = new SelectList(db.seccion, "idSeccion", "Nombre", usuario.idSeccion);
+            return View(usuario);
         }
 
-        // GET: alumnos/Edit/5
+        // GET: RegUser/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alumnos alumnos = db.alumnos.Find(id);
-            if (alumnos == null)
+            usuario usuario = db.usuario.Find(id);
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", alumnos.idUsuario);
-            return View(alumnos);
+            ViewBag.idPerfil = new SelectList(db.perfil, "idPerfil", "NombreP", usuario.idPerfil);
+            ViewBag.idSeccion = new SelectList(db.seccion, "idSeccion", "Nombre", usuario.idSeccion);
+            return View(usuario);
         }
 
-        // POST: alumnos/Edit/5
+        // POST: RegUser/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idAlumno,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idUsuario")] alumnos alumnos)
+        public ActionResult Edit([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil")] usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(alumnos).State = EntityState.Modified;
+                db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", alumnos.idUsuario);
-            return View(alumnos);
+            ViewBag.idPerfil = new SelectList(db.perfil, "idPerfil", "NombreP", usuario.idPerfil);
+            ViewBag.idSeccion = new SelectList(db.seccion, "idSeccion", "Nombre", usuario.idSeccion);
+            return View(usuario);
         }
 
-        // GET: alumnos/Delete/5
+        // GET: RegUser/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alumnos alumnos = db.alumnos.Find(id);
-            if (alumnos == null)
+            usuario usuario = db.usuario.Find(id);
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
-            return View(alumnos);
+            return View(usuario);
         }
 
-        // POST: alumnos/Delete/5
+        // POST: RegUser/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            alumnos alumnos = db.alumnos.Find(id);
-            db.alumnos.Remove(alumnos);
+            usuario usuario = db.usuario.Find(id);
+            db.usuario.Remove(usuario);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
