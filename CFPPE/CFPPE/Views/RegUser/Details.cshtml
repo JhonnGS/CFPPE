@@ -1,4 +1,4 @@
-﻿@model CFPPE.Models.alumnos
+﻿@model CFPPE.Models.usuario
 
 @{
     ViewBag.Title = "Details";
@@ -7,9 +7,17 @@
 <h2>Details</h2>
 
 <div>
-    <h4>alumnos</h4>
+    <h4>usuario</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
@@ -75,16 +83,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.usuario.Nombre)
+            @Html.DisplayNameFor(model => model.perfil.NombreP)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.usuario.Nombre)
+            @Html.DisplayFor(model => model.perfil.NombreP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.seccion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.seccion.Nombre)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idAlumno }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idUsuario }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

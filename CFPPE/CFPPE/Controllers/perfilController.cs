@@ -10,112 +10,107 @@ using CFPPE.Models;
 
 namespace CFPPE.Controllers
 {
-    public class alumnosController : Controller
+    public class perfilController : Controller
     {
         private plataformaEntities db = new plataformaEntities();
 
-        // GET: alumnos
+        // GET: perfil
         public ActionResult Index()
         {
-            var alumnos = db.alumnos.Include(a => a.usuario);
-            return View(alumnos.ToList());
+            return View(db.perfil.ToList());
         }
 
-        // GET: alumnos/Details/5
+        // GET: perfil/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alumnos alumnos = db.alumnos.Find(id);
-            if (alumnos == null)
+            perfil perfil = db.perfil.Find(id);
+            if (perfil == null)
             {
                 return HttpNotFound();
             }
-            return View(alumnos);
+            return View(perfil);
         }
 
-        // GET: alumnos/Create
+        // GET: perfil/Create
         public ActionResult Create()
         {
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre");
             return View();
         }
 
-        // POST: alumnos/Create
+        // POST: perfil/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idAlumno,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idUsuario")] alumnos alumnos)
+        public ActionResult Create([Bind(Include = "idPerfil,NombreP,Descripcion")] perfil perfil)
         {
             if (ModelState.IsValid)
             {
-                db.alumnos.Add(alumnos);
+                db.perfil.Add(perfil);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", alumnos.idUsuario);
-            return View(alumnos);
+            return View(perfil);
         }
 
-        // GET: alumnos/Edit/5
+        // GET: perfil/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alumnos alumnos = db.alumnos.Find(id);
-            if (alumnos == null)
+            perfil perfil = db.perfil.Find(id);
+            if (perfil == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", alumnos.idUsuario);
-            return View(alumnos);
+            return View(perfil);
         }
 
-        // POST: alumnos/Edit/5
+        // POST: perfil/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idAlumno,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idUsuario")] alumnos alumnos)
+        public ActionResult Edit([Bind(Include = "idPerfil,NombreP,Descripcion")] perfil perfil)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(alumnos).State = EntityState.Modified;
+                db.Entry(perfil).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", alumnos.idUsuario);
-            return View(alumnos);
+            return View(perfil);
         }
 
-        // GET: alumnos/Delete/5
+        // GET: perfil/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alumnos alumnos = db.alumnos.Find(id);
-            if (alumnos == null)
+            perfil perfil = db.perfil.Find(id);
+            if (perfil == null)
             {
                 return HttpNotFound();
             }
-            return View(alumnos);
+            return View(perfil);
         }
 
-        // POST: alumnos/Delete/5
+        // POST: perfil/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            alumnos alumnos = db.alumnos.Find(id);
-            db.alumnos.Remove(alumnos);
+            perfil perfil = db.perfil.Find(id);
+            db.perfil.Remove(perfil);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
