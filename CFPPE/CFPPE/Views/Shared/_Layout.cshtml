@@ -4,40 +4,79 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Plataforma Escolar CPF Digital</title>
+	<title> Plataforma Escolar Paulo Freire</title>
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-static/">
 
+	<!-- Bootstrap core CSS -->
+	<link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+	<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+	<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+	<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#563d7c">
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li>@Html.ActionLink("Entrar", "Index", "Home")</li>
-					@*<li>@Html.ActionLink("Acerca de", "About", "Home")</li>*@
-						<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-					<li>@Html.ActionLink("Reinscribete o preinscribete", "CargaImagen", "Inscripcion")</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<a class="navbar-brand" img width="300" height="300" src="~/Content/Pal/images/logocpf.svg" alt="" >Plataforma CPF Digital</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							@Html.ActionLink("Entrar a Aprender", "Index", "Logueo")
+						</li>
+						<li class="nav-item">
+							@Html.ActionLink("Contacto", "Contact", "Home")
+						</li>
+						<li class="nav-item">
+							@*@Html.ActionLink("Acerca de", "About", "Home")*@
+						</li>
+					</ul>
+				</div>
+	</nav>
 	<div class="container body-content">
 		@RenderBody()
 		<hr />
-		<footer>
-			<p>&copy; @DateTime.Now.Year - Escuela Paulo Freire servicios de calida educativa</p>
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Colegio Paulo Freire</h2>
+				<p>Servicios de Calidad Educativa A.C. se preocupa por la seguridad de tus datos, puedes leer el Aviso de Privacidad si tienes alguna duda sobre el uso de tu infomación.</p>
+				<ul class="actions">
+					<li><button class="button" style="width:140px; height:60px" onclick="location.href='@Url.Action("Aviso", "Home")';return false;">Aviso de privacidad</button></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Contacto</h2>
+				<dl class="alt">
+					<dt>Dirección</dt>
+					<dd> <a href="https://goo.gl/maps/8JzFyUG3bn5pcGj1A" target="_blank"> Rafael Ávila Camacho no. 576 B </a> &bull; Ajalpan, CP 75910 &bull; México</dd>
+					<dt>Teléfono</dt>
+					<dd>(236) 381-1567</dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter alt"><span class="label" style="color:aqua">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+				</ul>
+			</section>
+			<p class="copyright">&copy; CPF. Diseño css3: <a href="https://html5up.net" target="_blank">HTML5 UP</a>.</p>
 		</footer>
 	</div>
+	<!-- Scripts -->
+	<script src="~/Content/Pal/assets/js/jquery.min.js"></script>
+	<script src="~/Content/Pal/assets/js/jquery.scrollex.min.js"></script>
+	<script src="~/Content/Pal/assets/js/jquery.scrolly.min.js"></script>
+	<script src="~/Content/Pal/assets/js/browser.min.js"></script>
+	<script src="~/Content/Pal/assets/js/breakpoints.min.js"></script>
+	<script src="~/Content/Pal/assets/js/util.js"></script>
 
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")

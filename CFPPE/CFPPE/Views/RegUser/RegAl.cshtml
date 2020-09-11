@@ -51,16 +51,34 @@
             @*</div>*@
         </div>
 
-		<div class="form-group">
-			@*@Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
-		<div class="col-md-10">*@
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
 			@Html.DropDownList("* Sexo", new SelectList(
 			 new List<Object>{
 												new { value = "M" , text = "Masculino" },
 												new { value = "F" , text = "Femenino" }
-						  }, "value", "text", 2), "Selecciona una opcion", htmlAttributes: new { @class = "input1", @onkeypress = "return calle(event)", @required = "true" })
+						  }, "value", "text", 2), "Selecciona tu sexo", htmlAttributes: new { @class = "input1", @onkeypress = "return calle(event)", @required = "true" })
 			@Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
-			@*</div>*@
+			</div>
+		</div>*@
+
+		<div class="mtm _5wa2 _5dbb" id="u_3_n">
+	<div class="mtm mbs _2_68">* Sexo
+	  <a class="_58ms mlm" aria-label="" id="gender-help" title="Haz clic para obtener más información" href="#" role="button">
+		<i class="img sp_OaFMa2i9FQ_ sx_8efab1"></i>
+	  </a>
+	</div>
+	<span class="_5k_3" data-type="radio" data-name="gender_wrapper" id="u_3_o">
+			<span class="_5k_2 _5dba">
+		<label class="_58mt" for="u_3_4">Mujer</label><input type="radio" class="_8esa" name="sex" value="F" id="u_3_4" required>
+			</span>
+			<span class="_5k_2 _5dba">
+		<label class="_58mt" for="u_3_5">Hombre</label><input type="radio" class="_8esa" name="sex" value="M" id="u_3_5" required>
+			</span>
+	</span>
+	<i class="_5dbc _8esb img sp_DsFT2tc46le sx_31382b"></i><i class="_5dbd _8esc img sp_DsFT2tc46le sx_39e5c3"></i>
+	<div class="_1pc_"></div>
 		</div>
 
         <div class="form-group">
