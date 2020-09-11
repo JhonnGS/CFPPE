@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Security;
 using CFPPE.Models;
 
-namespace CBPPE.lib
+namespace CFPPE.lib
 {
 	public class SessionHelper
 	{

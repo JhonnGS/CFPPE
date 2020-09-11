@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 
-namespace CBPPE.lib
+namespace CFPPE.lib
 {
 	public class AESCryptoManejador
 	{

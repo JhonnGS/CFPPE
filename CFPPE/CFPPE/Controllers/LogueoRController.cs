@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CFPPE.
+using CFPPE.lib;
 //using CFPPE.lib;
 using CFPPE.Models;
 using CFPPE.Repositories;
@@ -53,11 +53,11 @@ namespace CBPPE.Controllers
 			usuario objUsuario = _repoUsuarios.getPorCorreo(usuario);
 			if (objUsuario == null)
 			{
-				return RedirectToAction("Index", "Logueo", new { error = 1, mensaje = "El usuario no existe" });
+				return RedirectToAction("Index", "LogueoR", new { error = 1, mensaje = "El usuario no existe" });
 			}
 			if (mnjAes.descifrar(objUsuario.Contraseña) != pass)
 			{
-				return RedirectToAction("Index", "Logueo", new { error = 1, mensaje = "La contraseña es incorrecta" });
+				return RedirectToAction("Index", "LogueoR", new { error = 1, mensaje = "La contraseña es incorrecta" });
 			}
 			//if (objUsuario.Status != 1)
 			//{
