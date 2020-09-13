@@ -22,7 +22,7 @@ body {
 /*--TITULO-DEL-FORMULARIO--------*/
 .title-form {
 	margin-bottom: 20px;
-	color: white;
+	color: cadetblue;
 	font-size: 30px;
 }
 
@@ -101,7 +101,7 @@ body {
 
 /*--BOTON-DE-REGISTRAR-----------*/
 .btn {
-	width: 100%;
+	width: 300%;
 	padding: 10px;
 	border-radius: 2px;
 	border: none;
