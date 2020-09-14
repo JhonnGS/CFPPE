@@ -5,9 +5,9 @@
 	<h2>Index</h2>*@
 
 <section>
-	@*<link href="~/Content/StyleLo.css" rel="stylesheet">
+	@*<link href="~/Content/StyleLo.css" rel="stylesheet">*@
 	<link href="~/Content/LoReg.css" rel="stylesheet" />
-	<link rel="stylesheet" href="~/Content/Pal/assets/css/main.css" />*@
+	<link rel="stylesheet" href="~/Content/Pal/assets/css/main.css" />
 	<link rel="stylesheet" href="~/Content/form.css">
 </section>
 @*<header>
@@ -37,7 +37,7 @@
 	</header>*@
 
 <div class="row">
-	<form method="post" id="ValidaForm" class="father-form" style="color:chartreuse">
+	<form method="post" class="father-form">
 		@if (ViewBag.error == 1)
 		{
 			<br /><br />
@@ -46,26 +46,27 @@
 			</div>
 		}
 		<div class="pt-10 pb-16" id="form">
-			<h1 class="align-content-lg-center">Bienvenido inicia sesión para entrar o Registrate para empezar</h1>
+			<h1 class="align-content-lg-center">Bienvenido </h1>
+			<h3>Inicia sesión para entrar o Registrate para empezar</h3>
 			@*<p class="align-content-center">inicia sesión para entrar </p>
 				<p class="align-content-center">o </p>
 				<p class="align-content-center">Registrate para empezar</p>*@
 			<div class="container">
 				<div class="row">
-					<div class="bg-white-active shadow-sm rounded p-6">
+					<div class="bg-success shadow-sm rounded p-3">
 						<div class="card-header px-lg-7 px-4 pt-3 pb-0 border-0 bg-transparent">
 							<div class="row d-flex justify-content-center">
 								<div class="col">
 									<nav>
 										<div class="nav nav-tabs text-center" role="tablist">
-											<a class="nav-item nav-link font-weight-bold px-5 active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true"><h3 class="title-form">Iniciar sesión</h3></a>
-											<a class="nav-item nav-link font-weight-bold px-5" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab" aria-controls="nav-register" aria-selected="true"><h3 class="title-form">Registrarse</h3></a>
+											<a class="nav-item nav-link font-weight-bold px-2 active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true"><h2 class="title-form">Iniciar sesión</h2></a>
+											<a class="nav-item nav-link font-weight-bold px-2" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab" aria-controls="nav-register" aria-selected="true"><h2 class="title-form">Registrarse</h2></a>
 										</div>
 									</nav>
 								</div>
 							</div>
 						</div>
-						<hr />
+						
 						<div class="tab-content">
 							<div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
 								<div class="card-block px-lg-7 px-3 pb-5">
@@ -77,7 +78,7 @@
 												</font>
 											</font>
 										</label>*@
-										 <input class="input" type="email" placeholder="Correo electrónico" required maxlength="30" disabled>
+										 <input class="input" type="email" placeholder="Correo electrónico" required maxlength="30" >
 										@*<input class="cajas" type="email" placeholder="Correo" style="color:black" disabled="disabled">*@
 									</div>
 									<div class="form-group mb-3">
@@ -93,14 +94,15 @@
 									</div>
 									<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
 										<span class="input-group-btn">
-											@*<button type="button" id="btn-mostrar-pass" class="glyphicon glyphicon-eye-open" title="Mostar" style=" border-radius: 0px 5px 5px 0px; background-color: #ffffff; border-right: 1px solid #d2d6de; border-top: 1px solid #d2d6de; border-bottom: 1px solid #d2d6de; border-left: 0px solid #d2d6de; width: 20px; height: 34px; top: 0px; color: #777;"></button>*@
-											<button class="btn btn-success align-content-end" @*type="button"*@ id="btn-mostrar-pass" title="Mostar contraseña" disabled>
-												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+											<button type="button" id="btn-mostrar-pass" class="glyphicon glyphicon-eye-open" title="Mostar" style=" border-radius: 0px 5px 5px 0px; background-color: #ffffff; border-right: 1px solid #d2d6de; border-top: 1px solid #d2d6de; border-bottom: 1px solid #d2d6de; border-left: 0px solid #d2d6de; width: 20px; height: 34px; top: 0px; color: #777;"></button>
+											@*<button class="btn btn-success align-content-end" id="btn-mostrar-pass" title="Mostar contraseña" disabled>*@
+												@*<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 													<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
 													<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-												</svg>
-												Mostrar
-											</button>
+												
+												</svg>*@
+												@*Mostrar*@
+											@*</button>*@
 
 										</span>
 									</div>
@@ -111,22 +113,23 @@
 											</label>
 										</div>*@
 									 <p class="paragraph">Antes de registrarte en nuestra plataforma debes aceptar nuestros terminos y condiciones de acuerdo a nuestras politicas y servicios</p>
-										<p class="termino1"><input type="checkbox">&nbsp; Estoy de acuerdo con <a class="termino2" href="">Terminos y Condiciones</a></p>
+										<p class="termino1"><input type="checkbox" style="color:white">  Estoy de acuerdo con <a class="termino2" onclick="location.href='@Url.Action("Aviso", "Home")';return false;">Terminos y Condiciones</a></p>
             
 									@*<p class="terminos1"><input type="checkbox" required>&nbsp; Estoy de acuerdo con <a href="" class="terminos2">Terminos y condiciones</a></p>*@
 									<br />
 									<div class="row">
 										<div class="col-xs-6 col-sm-offset-3 align-content-center">
-											<button disabled class="btn btn-success " type="submit" style=" border-radius: 0px 5px 5px 0px; background-color: #00ff90; border-right: 2px solid #d2d6de; border-top: 2px solid #d2d6de; border-bottom: 1px solid #d2d6de; border-left: 0px solid #d2d6de; width:120px; height:40px; top: 0px; ">Entrar</button>
+											@*<button disabled class="btn btn-success " type="submit" style=" border-radius: 0px 5px 5px 0px; background-color: #00ff90; border-right: 2px solid #d2d6de; border-top: 2px solid #d2d6de; border-bottom: 1px solid #d2d6de; border-left: 0px solid #d2d6de; width:120px; height:40px; top: 0px; ">Entrar</button>*@
+											<input class="btn" type="submit" value="Entrar">
 										</div>
 									</div>
 									<br />
-									<a disable class="text-muted small" style="color: black" @*href="/Registro/Recupera"*@>
+									<a disable class="text-muted small" style="color: black" onclick="location.href='@Url.Action("Recupera", "RegUser")';return false;" >Olvidastes tu contraseña
 										<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z" />
 
 										</svg>
-									disabled	@Html.ActionLink("Olvidastes tu contraseña", "Recupera", "Registro", new { area = "" }, new { @class = "navbar-brand" })
+									
 									</a>
 
 								</div>

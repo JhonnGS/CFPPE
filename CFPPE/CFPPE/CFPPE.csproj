@@ -169,6 +169,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\alumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogueoRController.cs" />
     <Compile Include="Controllers\perfilController.cs" />
@@ -519,10 +520,14 @@
     <Content Include="Views\perfil\Index.cshtml" />
     <Content Include="Views\Home\Aviso.cshtml" />
     <Content Include="Views\Logueo\Index.cshtml" />
+    <Content Include="Views\alumnos\Create.cshtml" />
+    <Content Include="Views\alumnos\Delete.cshtml" />
+    <Content Include="Views\alumnos\Details.cshtml" />
+    <Content Include="Views\alumnos\Edit.cshtml" />
+    <Content Include="Views\alumnos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LogueoR\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
