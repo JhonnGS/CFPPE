@@ -171,6 +171,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\alumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\inscripcionsController.cs" />
+    <Compile Include="Controllers\maestrosController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -428,6 +430,19 @@
     <Content Include="Views\alumnos\Details.cshtml" />
     <Content Include="Views\alumnos\Edit.cshtml" />
     <Content Include="Views\alumnos\Index.cshtml" />
+    <Content Include="Views\inscripcions\Create.cshtml" />
+    <Content Include="Views\inscripcions\Delete.cshtml" />
+    <Content Include="Views\inscripcions\Details.cshtml" />
+    <Content Include="Views\inscripcions\Edit.cshtml" />
+    <Content Include="Views\inscripcions\Index.cshtml" />
+    <Content Include="Views\maestros\Create.cshtml" />
+    <Content Include="Views\maestros\Delete.cshtml" />
+    <Content Include="Views\maestros\Details.cshtml" />
+    <Content Include="Views\maestros\Edit.cshtml" />
+    <Content Include="Views\maestros\Index.cshtml" />
+    <Content Include="Views\maestros\CreateActividades.cshtml" />
+    <Content Include="Views\maestros\CreateMateria.cshtml" />
+    <Content Include="Views\maestros\CreateTarea.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
