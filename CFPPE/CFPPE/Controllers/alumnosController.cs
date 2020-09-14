@@ -128,5 +128,52 @@ namespace CFPPE.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+
+		public ActionResult RecientesList()
+		{
+
+			var actividades = db.actividades.Include(ac => ac.idAlumno).Include(ac => ac.idMaestro).Include(ac => ac.idMateria);
+			return View(actividades.ToList());
+		}
+
+		public ActionResult Recientes(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			actividades actividades = db.actividades.Find(id);
+			if (actividades == null)
+			{
+				return HttpNotFound();
+			}
+			ViewBag.idActividad = new SelectList(db.materia, "idActividad", "NombreA", actividades.idActividad);
+			return View(actividades);
+		}
+
+		// POST: alumnos/Edit/5
+		// Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Recientes([Bind(Include = "idActividad,idAlumno,idMateria,NombreA,Tema,Calificacion,FechaInicio,FechaEntrega,Detalle,TempoActividad,Valor,idMaestro")] actividades actividades)
+		{
+			if (ModelState.IsValid)
+			{
+				db.Entry(actividades).State = EntityState.Modified;
+				db.SaveChanges();
+				return RedirectToAction("Indexpendiente");
+			}
+			ViewBag.idActividad = new SelectList(db.actividades, "idActividades", "NombreA", actividades.idActividad);
+			return View(actividades);
+		}
+
+		public ActionResult Materias()
+		{
+			
+			var materia = db.materia.Include(m => m.idMaestro).Include(m => m.idSeccion).Include(m => m.idTipoMateria); 
+			return View(materia.ToList());
+		}
+
+	}
 }

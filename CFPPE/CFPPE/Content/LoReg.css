@@ -1,0 +1,98 @@
+﻿/*--ACOMODANDO-EL-DOCUMENTO----------------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*--EDICION-IMAGEN-FONDO-------------------*/
+body {
+	/*background: #33b1c1;*/
+	background: linear-gradient(45deg, #33c96c, #139D8D );
+}
+
+/*--EDICION-DEL-FORMULARIO-----------------*/
+.formulario {
+	width: 600px;
+	padding: 50px;
+	margin: auto;
+	margin-top: 160px;
+	font-family: Calibri;
+	color: #4ccb78 ;
+}
+
+/*--EDICION-DEL-TITULO---------------------*/
+.titulo {
+	margin-bottom: 20px;
+
+}
+
+/*--EDICION-DE-INPUTS----------------------*/
+.cajas {
+	width: 100%;
+	background: white;
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 2px;
+	border: none;
+	font-family: 'Arial Rounded MT';
+	font-size: 14px;
+	border-left: 20px solid #5b7fc4;
+	border-right: 20px solid #5b7fc4;
+	transition: all .3s ease;
+}
+
+	/*--EDICION-DE-HOVER-Y-FOCUS-A-INPUTS------*/
+	.cajas:hover, .cajas:focus {
+		border-left: 20px solid #4bcfef;
+		border-right: 20px solid #4bcfef;
+	}
+
+/*--EDICION-DE-TERMINOS-Y-CONDICIONES------*/
+.terminos1 {
+	text-align: center;
+	color: #4ccb78;
+}
+
+.terminos2 {
+	text-decoration: none;
+	color: #4ccb78;
+	transition: all .3s ease;
+}
+
+	/*--EDICION-DE-HOVER-Y-FOCUS-A-TERMINOS----*/
+	.terminos2:hover, .terminos2:focus {
+		color: #33b1c1;
+	}
+/*33b1c1*/
+/*--EDICION-DEL-BOTON-REGISTRAR------------*/
+.btn1 {
+	padding: 10px;
+	width: 100%;
+	background: #2f70c7;
+	border: none;
+	color: green;
+	border-radius: 4px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	transition: all .5s ease;
+}
+
+	/*--EDICION-DE-HOVER-Y-FOCUS-AL-BOTON------*/
+	.btn1:hover, .btn:focus {
+		background: #4f87d4;
+		cursor: pointer;
+	}
+
+/*--EDICION-DE-YA-TENGO-CUENTA-------------*/
+.cuenta {
+	color: #3acde0;
+	text-decoration: none;
+	font-size: 15px;
+	text-align: center;
+	transition: all .3s ease;
+}
+
+	.cuenta:hover, .cuenta:focus {
+		color: #4ccb78;
+	}

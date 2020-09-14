@@ -13,6 +13,10 @@ namespace CFPPE.Controllers
 			return View();
 		}
 
+		public ActionResult Aviso()
+		{
+			return View();
+		}
 		public ActionResult About()
 		{
 			ViewBag.Message = "Your application description page.";
@@ -22,7 +26,7 @@ namespace CFPPE.Controllers
 
 		public ActionResult Contact()
 		{
-			ViewBag.Message = "Your contact page.";
+			ViewBag.Message = "Tu pagina de contacto";
 
 			return View();
 		}

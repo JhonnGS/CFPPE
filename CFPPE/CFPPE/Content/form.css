@@ -1,0 +1,131 @@
+﻿/*--CONFIGURANDO-MARGENES--------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'open sans', 'calibri', 'arial';
+}
+
+/*--FONDO-DE-PAGINA--------------*/
+body {
+	background: #027a89;
+}
+
+/*--FORMULARIO-------------------*/
+.father-form {
+	width: 450px;
+	padding: 30px;
+	margin: auto;
+	margin-top: 80px;
+}
+
+/*--TITULO-DEL-FORMULARIO--------*/
+.title-form {
+	margin-bottom: 20px;
+	color: cadetblue;
+	font-size: 30px;
+}
+
+/*--INPUT-NOMBRE-----------------*/
+.input1 {
+	width: 48%;
+	padding: 10px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 20px;
+	margin-right: 9px;
+	font-size: 15px;
+	border-left: 10px solid #26a8ed;
+	transition: all .3s ease;
+}
+
+	.input1:hover, .input1:focus {
+		border-left: 10px solid #17d98f;
+	}
+
+/*--INPUT-APELLIDO---------------*/
+.input2 {
+	width: 48.6%;
+	padding: 10px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 20px;
+	font-size: 15px;
+	border-left: 10px solid #26a8ed;
+	transition: all .3s ease;
+}
+
+	.input2:hover, .input2:focus {
+		border-left: 10px solid #17d98f;
+	}
+
+/*--INPUT------------------------*/
+.input {
+	width: 100%;
+	padding: 10px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 20px;
+	font-size: 15px;
+	border-left: 10px solid #26a8ed;
+	transition: all .3s ease;
+}
+
+	.input:hover, .input:focus {
+		border-left: 10px solid #17d98f;
+	}
+
+/*--PARRAFO-TERMINOS-------------*/
+.paragraph {
+	color: #e8e8e8;
+	font-size: 12px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/*--TERMINOS-Y-CONDICIONES-------*/
+.termino1 {
+	text-align: center;
+	color: white;
+}
+
+.termino2 {
+	color: #17c3eb;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+	.termino2:hover {
+		color: #3fb0c4;
+	}
+
+/*--BOTON-DE-REGISTRAR-----------*/
+.btn {
+	width: 300%;
+	padding: 10px;
+	border-radius: 2px;
+	border: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: white;
+	background: #1baade;
+	font-size: 15px;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+	.btn:hover {
+		background: #159ccc;
+	}
+
+/*--OTRA-OPCION------------------*/
+.otra-opcion {
+	text-align: center;
+	color: #17c3eb;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+	.otra-opcion:hover {
+		color: #3fb0c4;
+	}
