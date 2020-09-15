@@ -4,7 +4,7 @@
     ViewBag.Title = "Registro nuevo ";
 }
 
-<h2>RegAl</h2>
+<h1 class="title-form">Formulario de registro para </h1>
 <script src="@Url.Content("~/Scripts/Val.js")"></script>
 <link rel="stylesheet" href="~/Content/form.css">
 
@@ -16,16 +16,16 @@
 <div class="father-form">
 	<h2 class="title-form">Nuevo usuario de tipo </h2>
 	<hr />
-	<h4>Formulario para registrar de  nuevo alumno. Favor de Rellenar los campos marcados con * son obligatorios</h4>
+	<h4>Formulario para registro de nuevo alumno. Favor de Rellenar los campos marcados con * son obligatorios</h4>
 	<hr />
 	<div class="box-body">
 		<div class="row">
 			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 			<div class="form-group">
-				@*@Html.Label("* Cargue foto de perfil", htmlAttributes: new { @class = "control-label col-md-2" })
-					<div class="col-md-10">*@
+				@Html.Label("* Cargue foto de perfil", htmlAttributes: new { @class = "control-label col-md-2" })
+					@*<div class="col-md-10">*@
 				@*@Html.EditorFor(model => model.Foto, new { htmlAttributes = new { @class = "form-control" } })*@
-				<input class="input1" placeholder="* Cargue su foto de perfil aquí" required maxlength="30" type="file" name="file" id="file" onchange="comprueba_extension('file')" />
+				<input class="input1" title="*cargue su foto de perfil aqui" placeholder="* Cargue su foto de perfil aquí" required maxlength="30" type="file" name="file" id="file" onchange="comprueba_extension('file')" />
 				@Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
 			</div>
 		</div>
@@ -48,24 +48,24 @@
 		<div class="form-group">
 			@*@Html.LabelFor(model => model.APM, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">*@
-			@Html.EditorFor(model => model.APM, new { htmlAttributes = new { @class = "input2", @type = "text", @placeholder = "Apellido materno", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)" } })
+			@Html.EditorFor(model => model.APM, new { htmlAttributes = new { @class = "input", @type = "text", @placeholder = "Apellido materno", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)" } })
 			@Html.ValidationMessageFor(model => model.APM, "", new { @class = "text-danger" })
 			@*</div>*@
 		</div>
 
-		@*<div class="form-group">
+		<div class="form-group">
 				@Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				@Html.DropDownList("* Sexo", new SelectList(
 				 new List<Object>{
 													new { value = "M" , text = "Masculino" },
 													new { value = "F" , text = "Femenino" }
-							  }, "value", "text", 2), "Selecciona tu sexo", htmlAttributes: new { @class = "input1", @onkeypress = "return calle(event)", @required = "true" })
+							  }, "value", "text", 2), "Selecciona tu sexo", htmlAttributes: new { @class = "form-control", @onkeypress = "return calle(event)", @required = "true" })
 				@Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
 				</div>
-			</div>*@
+			</div>
 
-		<div class="mtm _5wa2 _5dbb" id="u_3_n">
+		@*<div class="mtm _5wa2 _5dbb" id="u_3_n">
 			<div class="mtm mbs _2_68">
 				* Sexo
 				<a class="_58ms mlm" aria-label="" id="gender-help" title="Haz clic para obtener más información" href="#" role="button">
@@ -74,20 +74,20 @@
 			</div>
 			<span class="_5k_3" data-type="radio" data-name="gender_wrapper" id="u_3_o">
 				<span class="_5k_2 _5dba">
-					<label class="_58mt" for="u_3_4">Mujer</label><input type="radio" class="_8esa" name="Sexo" value="F" id="u_3_4" required>
+					<label class="_58mt" for="u_3_4">Mujer</label><input type="radio" class="_8esa" name="Sexo" value="F" id="u_3_4" required style="color:aqua">
 				</span>
 				<span class="_5k_2 _5dba">
-					<label class="_58mt" for="u_3_5">Hombre</label><input type="radio" class="_8esa" name="Sexo" value="M" id="u_3_5" required>
+					<label class="_58mt" for="u_3_5">Hombre</label><input type="radio" class="_8esa" name="Sexo" value="M" id="u_3_5" required style="color:aqua">
 				</span>
 			</span>
 			<i class="_5dbc _8esb img sp_DsFT2tc46le sx_31382b"></i><i class="_5dbd _8esc img sp_DsFT2tc46le sx_39e5c3"></i>
 			<div class="_1pc_"></div>
-		</div>
+		</div>*@
 
 		<div class="form-group">
 			@*@Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">*@
-			@Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "Dirección", @required = "true", @maxlength = "30", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)" } })
+			@Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "input", @type = "text", @placeholder = "Dirección", @required = "true", @maxlength = "30", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)" } })
 			@Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
 			@*</div>*@
 		</div>
@@ -95,7 +95,7 @@
 		<div class="form-group">
 			@*@Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">*@
-			@Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "input2", @type = "text", @placeholder = "Correo electrónico", @required = "true", @maxlength = "30", @onchange = "ValidaCorreo(this.value, this.id)", @onkeypress = "return calle(event)" } })
+			@Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "Correo electrónico", @required = "true", @maxlength = "30", @onchange = "ValidaCorreo(this.value, this.id)", @onkeypress = "return calle(event)" } })
 			@Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
 			@*</div>*@
 		</div>
@@ -120,7 +120,7 @@
 			@*@Html.LabelFor(model => model.idSeccion, "idSeccion", htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">*@
 			@Html.DropDownList("idSeccion", null, htmlAttributes: new { })
-			@Html.ValidationMessageFor(model => model.idSeccion, "", new { @class = "input2", @placeholder = "Elige la seccion a la que pertenece", @required = "true" })
+			@Html.ValidationMessageFor(model => model.idSeccion, "", new { @class = "form-control", @placeholder = "Elige la seccion a la que pertenece", @required = "true" })
 			@*</div>*@
 		</div>
 
@@ -145,7 +145,7 @@
 
 					<p class="otra-opcion"><a class="otra-opcion" href="~/Views/Logueo/Index.cshtml">Ya tengo Cuenta</a></p>
 
-					@*<button type="submit" value="Regresar" class="btn btn-success pull-right" style="width:100px; height:40px">Regresar</button>*@
+					<button type="submit" value="Regresar" class="btn btn-success pull-right" style="width:100px; height:40px">Regresar</button>
 				</div>
 			</div>
 		</div>

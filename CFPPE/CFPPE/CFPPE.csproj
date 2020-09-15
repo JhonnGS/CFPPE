@@ -506,7 +506,6 @@
     <Content Include="Views\RegUser\Details.cshtml" />
     <Content Include="Views\RegUser\Edit.cshtml" />
     <Content Include="Views\RegUser\Index.cshtml" />
-    <Content Include="Views\Shared\MasterPageAl.cshtml" />
     <Content Include="Views\RegUser\RegAl.cshtml" />
     <Content Include="Views\seccions\Create.cshtml" />
     <Content Include="Views\seccions\Delete.cshtml" />

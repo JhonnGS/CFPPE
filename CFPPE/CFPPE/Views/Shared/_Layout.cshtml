@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Plataforma Escolar Paulo Freire</title>
+	<title> Plataforma escolar CPF digital</title>
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-static/">
@@ -17,7 +17,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 align-content-center">
-		<a href="Index"><img width="35" height="35" src="~/Content/Pal/images/logocpf.svg" alt="" /> Plataforma CPF Digital</a>
+		<a onclick="location.href='@Url.Action("Index", "Home")';return false;"><img width="40" height="40" src="~/Content/Pal/images/logocpf.svg" alt="" /> Plataforma CPF Digital</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -57,8 +57,8 @@
 					<dd>(236) 381-1567</dd>
 				</dl>
 				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter alt"><span class="label" style="color:aqua">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+					<li><a href="https://twitter.com/COLEGIOPAULO" class="icon brands fa-twitter alt"><span class="label" style="color:aqua">Twitter</span></a></li>
+					<li><a href="https://www.facebook.com/paulo.freire.140" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
 				</ul>
 			</section>
 			<p class="copyright">&copy; CPF. Diseño css3: <a href="https://html5up.net" target="_blank">HTML5 UP</a>.</p>
