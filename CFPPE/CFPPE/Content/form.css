@@ -15,9 +15,9 @@ body {
 /*--FORMULARIO-------------------*/
 .father-form {
 	width: 800px;
-	padding: 200px;
+	padding: 40px;
 	margin: auto;
-	margin-top: 180px;
+	margin-top: 140px;
 	color: #33c96c;
 	background: linear-gradient(45deg, #33c96c, #139D8D );
 }
