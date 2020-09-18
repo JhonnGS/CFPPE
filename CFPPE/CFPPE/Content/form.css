@@ -8,18 +8,35 @@
 
 /*--FONDO-DE-PAGINA--------------*/
 body {
-	background: #33c96c;
+	/*background: #33c96c;*/
 	background: linear-gradient(45deg, #33c96c, #139D8D );
 }
 
 /*--FORMULARIO-------------------*/
 .father-form {
-	width: 800px;
-	padding: 40px;
+	align-content:center;
+	width: 900px;
+	padding: 35px;
 	margin: auto;
 	margin-top: 140px;
 	color: #33c96c;
 	background: linear-gradient(45deg, #33c96c, #139D8D );
+}
+
+.father {
+	align-content: center;
+	width: 700px;
+	color:blue;
+	background:#ffd800;
+	/*padding: 35px;
+	margin: auto;
+	margin-top: 140px;
+	color: #33c96c;
+	background: linear-gradient(45deg, #33c96c, #139D8D );*/
+}
+
+.fath {
+	align-content: center;	
 }
 
 /*--TITULO-DEL-FORMULARIO--------*/
@@ -31,6 +48,7 @@ body {
 
 /*--INPUT-NOMBRE-----------------*/
 .input1 {
+	color:yellow;
 	width: 48%;
 	padding: 10px;
 	border-radius: 2px;
@@ -38,45 +56,65 @@ body {
 	margin-bottom: 20px;
 	margin-right: 9px;
 	font-size: 15px;
-	border-left: 10px solid #26a8ed;
+	border-left: 10px solid #ffd800;
 	transition: all .3s ease;
 }
 
 	.input1:hover, .input1:focus {
-		border-left: 10px solid #17d98f;
+		border-left: 10px solid #ffd800;
 	}
 
 /*--INPUT-APELLIDO---------------*/
 .input2 {
+	color:yellow;
 	width: 48.6%;
 	padding: 10px;
 	border-radius: 2px;
 	border: none;
 	margin-bottom: 20px;
 	font-size: 15px;
-	border-left: 10px solid #26a8ed;
+	border-left: 10px solid #ffd800;
 	transition: all .3s ease;
 
 }
 
 	.input2:hover, .input2:focus {
-		border-left: 10px solid #17d98f;
+		border-left: 10px solid #ffd800;
 	}
+
+
+/*.input3 {
+	background:#000000;
+	color:black;
+	width: 48.6%;
+	padding: 10px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 20px;
+	font-size: 24px;
+	border-left: 10px solid #ffd800;
+	transition: all .3s ease;
+}
+
+	.input3:hover, .input3:focus {
+		border-left: 10px solid #000000;
+	}*/
 
 /*--INPUT------------------------*/
 .input {
+	color:yellow;
 	width: 100%;
 	padding: 10px;
 	border-radius: 2px;
 	border: none;
 	margin-bottom: 20px;
 	font-size: 15px;
-	border-left: 10px solid #26a8ed;
+	border-left: 10px solid #ffd800;
 	transition: all .3s ease;
 }
 
 	.input:hover, .input:focus {
-		border-left: 10px solid #17d98f;
+		border-left: 10px solid #ffd800;
 	}
 
 /*--PARRAFO-TERMINOS-------------*/
@@ -105,24 +143,29 @@ body {
 
 /*--BOTON-DE-REGISTRAR-----------*/
 .btn {
+	background:#0026ff;
+	color:gold;
 	align-content:center;
 	text-align:center;
-	width: 800%;
+	width: 900%;
 	padding: 10px;
 	border-radius: 2px;
 	border: none;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color:greenyellow;
-	background: #1baade;
 	font-size: 15px;
 	cursor: pointer;
 	transition: all .3s ease;
 }
 
+	.btn:hover {
+		background: #ffd800;
+	}
+
+
 /*--BOTON-DE-mosttrar-----------*/
 .btn2 {
-	width: 50px;
+	
 	height: 50px;
 	top: 1px;
 	color: #33c96c;
@@ -136,12 +179,31 @@ body {
 	transition: all .3s ease;
 }
 
-	.btn:hover {
+	.btn2:hover {
 		background: #159ccc;
 	}
+.btn3 {
+	background: #0026ff;
+	color: gold;
+	align-content: center;
+	text-align: center;
+	width: 400%;
+	padding: 10px;
+	border-radius: 2px;
+	border: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 15px;
+	cursor: pointer;
+	transition: all .3s ease;
+}
 
+	.btn3:hover {
+		background: #ffd800;
+	}
 /*--OTRA-OPCION------ya tengo cuenta------------*/
 .otra-opcion {
+	align-content:center;
 	text-align: center;
 	color: #17c3eb;
 	text-decoration: none;
@@ -151,3 +213,25 @@ body {
 	.otra-opcion:hover {
 		color: #3fb0c4;
 	}
+
+.terminos2 {
+	align-content: center;
+	text-align: center;
+	color: #17c3eb;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+	.otra-opcion:hover {
+		color: yellow;
+	}
+
+.radio {
+	align-content: center;
+	text-align: center;
+	
+	color: white;
+	background: white;
+	
+	transition: all .3s ease;
+}

@@ -530,6 +530,7 @@
     <Content Include="Views\RegUser\RegTP.cshtml" />
     <Content Include="Views\RegUser\RegAd.cshtml" />
     <Content Include="Views\RegUser\Recupera.cshtml" />
+    <Content Include="Views\RegUser\RegADM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -197,9 +197,9 @@ namespace CFPPE.Controllers
 							a.idUsuario = usuario.idUsuario;
 							db.alumnos.Add(a);
 							db.SaveChanges();
-							return RedirectToAction("Index", "Home");
+							//return RedirectToAction("Index", "Home");
 
-						//return RedirectToAction("Index", "Home", new { mensaje = 1 });
+						return RedirectToAction("Index", "Home", new { mensaje = 1 });
 					}
 					catch (Exception e)
 						{
@@ -666,5 +666,31 @@ namespace CFPPE.Controllers
 		////	//Console.WriteLine(output);
 
 		////}
-}
+		///
+
+	
+		public ActionResult RegADM()
+		{
+			
+			return View();
+		}
+
+		// POST: RegUser/Create
+		// Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		//[ValidateAntiForgeryToken]
+		public ActionResult RegADM(FormCollection frm)
+		{
+			string clave = frm["clave"];
+			//var chec = 
+			if (clave == "TJK2508736")
+			{
+				return RedirectToAction("RegAd", "RegUser");
+			}
+
+		
+			return View();
+		}
+	}
 }

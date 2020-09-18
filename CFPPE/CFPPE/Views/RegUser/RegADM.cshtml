@@ -1,0 +1,110 @@
+﻿<section>
+
+	<script src="@Url.Content("~/Scripts/Val.js")"></script>
+</section>
+
+@{
+	ViewBag.Title = "Verificando Administrador";
+}
+@*<div class="row">
+	<form method="post" id="ValidaForm">
+		@if (ViewBag.error == 1)
+		{
+			<br /><br />
+			<div style="text-align: center" background-color:#ff0000;>
+				<h3 style="color:red"><strong> @ViewBag.mensaje </strong></h3>
+			</div>
+		}
+
+		<div class="login-box-body" style="padding-left: 25%; padding-right: 25%;">
+			<div class="box box-info" style="border-radius: 10px 10px 10px 10px;">
+				<div class="box-header with-border" style="text-align: center;">
+					<h2 class="box-title">Hola usuario. Antes de continuar con el registro verifiquemos que sea el administrador </h2>
+				</div>
+				<br />
+				<p>Ingresa la clave unica para continuar con el formulario de registro</p>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+						<div class="card-title px-lg-4 px-1 pb-3">*@
+
+							<section>
+								@*<link href="~/Content/LoReg.css" rel="stylesheet" />*@
+								<link rel="stylesheet" href="~/Content/form.css">
+								@*<link rel="stylesheet" href="~/Content/Pal/assets/css/main.css" />
+									<noscript><link rel="stylesheet" href="~/Content/Pal/assets/css/noscript.css" /></noscript>*@
+
+							</section>
+
+							<div class="row">
+								<form method="post" class="father-form align-center">
+									@if (ViewBag.error == 1)
+									{
+										<br /><br />
+										<div style="text-align: center" background-color:#ff0000;>
+											<h3 style="color:red"><strong> @ViewBag.mensaje </strong></h3>
+										</div>
+									}
+									<div class="pt-10 pb-16" id="form">
+										<h1 class="title-form ">Bienvenido! </h1>
+										<h3>Antes de continuar verifiquemos que seal el administrador</h3>
+										<div class="container">
+											<div class="father align-center">
+												<div class="bg-success shadow-sm rounded p-4 align-content-center">
+													
+
+													<div class="tab-content">
+														<div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+															<div class="card-title px-lg-4 px-1 pb-3">
+																
+																<div class="form-group mb-3">
+
+																	<input class="input" id="txtPass" type="password" placeholder="* Clave" required maxlength="30" >
+																	</div>
+																<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
+																	<span class="input-group-btn">
+																		<button type="button" id="btn-mostrar-pass" title="Mostar contraseña" style=" background-color: #808080;width:0px; height:0px; top: 0px; ">
+																			<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+																				<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+
+																			</svg>
+																		</button>
+
+																	</span>
+																</div>
+																
+																<div class="fath align-center">
+																	<div class="col-xs-6 col-sm-offset-3 align-center">
+																		<input class="btn" type="submit" value="Continuar">
+																	</div>
+																</div>
+																
+
+															</div>
+														</div>
+
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+							<script src="~/Scripts/popper.min.js"></script>
+							<script src="~/Scripts/bootstrap.min.js"></script>
+
+							<script>
+								var activadoMostrar = false;
+								$('#btn-mostrar-pass').click(function () {
+									if (activadoMostrar) {
+										activadoMostrar = false; //La cambiamos a 0
+										$('#txtPass').removeAttr("type", "text"); //Removemos el atributo de Tipo Texto
+										$('#txtPass').prop("type", "password"); //Agregamos el atributo de Tipo Contraseña
+									} else {
+										activadoMostrar = true;
+										$('#txtPass').removeAttr("type", "password"); //Removemos el atributo de Tipo Contraseña
+										$('#txtPass').prop("type", "text"); //Agregamos el atributo de Tipo Texto(Para que se vea la Contraseña escribida)
+									}
+								});</script>

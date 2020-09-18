@@ -1,120 +1,198 @@
 ﻿@model CFPPE.Models.usuario
 
 @{
-    ViewBag.Title = "RegTP";
+	ViewBag.Title = "Registro nuevo de padre y/o tutores";
 }
 
-<h2>RegTP</h2>
+<h1 class="title-form">Formulario de registro para los padres y/o tutores</h1>
 
+<section>
+	<script src="@Url.Content("~/Scripts/Val.js")"></script>
+	<link rel="stylesheet" href="~/Content/form.css">
+</section>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("RegAl", "RegUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>usuario</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Foto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Foto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
-            </div>
-        </div>
+	@Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-            </div>
-        </div>
+	<input type="hidden" id="mensaje" value="@ViewBag.mensaje" />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.APP, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.APP, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.APP, "", new { @class = "text-danger" })
-            </div>
-        </div>
+	<div class="father-form">
+		<h2 class="title-form">Nuevo usuario de tipo padre/tutor </h2>
+		<hr />
+		<h4>Formulario para registro de nuevo padre/tutor. Favor de Rellenar los campos marcados con * son obligatorios</h4>
+		<hr />
+		@*<div class="box-body">
+			<div class="row">*@
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="form-group">
+			@Html.Label("* Cargue foto de perfil", htmlAttributes: new { @class = "control-label col-md-10", @color = "yellow" })
+			<div class="col-md-8">
+				@*@Html.EditorFor(model => model.Foto, new { htmlAttributes = new { @class = "form-control" } })*@
+				<input @*class="input1"*@ title="*cargue su foto de perfil aqui" required maxlength="60" type="file" name="file" style="color:gold" id="file" onchange="comprueba_extension('file')" />
+				@Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.APM, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.APM, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.APM, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		<div class="col-md-8">
+			@Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "* Nombre", @required = "true", @maxlength = "30", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)", @style = "color:gold" } })
+			@Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.APP, htmlAttributes: new { @class = "control-label col-md-2" })*@
+		<div class="col-md-8">
+			@Html.EditorFor(model => model.APP, new { htmlAttributes = new { @class = "input2", @type = "text", @placeholder = "* Apellido paterno", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)", @style = "color:gold" } })
+			@Html.ValidationMessageFor(model => model.APP, "", new { @class = "text-danger" })
+		</div>
+		@*</div>*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.APM, htmlAttributes: new { @class = "control-label col-md-2" })*@
+		<div class="col-md-8">
+			@Html.EditorFor(model => model.APM, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "* Apellido materno", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)", @style = "color:gold" } })
+			@Html.ValidationMessageFor(model => model.APM, "", new { @class = "text-danger" })
+		</div>
+		@*</div>*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Contraseña, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Contraseña, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Contraseña, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.Label("*  Sexo", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-8">
+				@Html.DropDownListFor(model => model.Sexo, new SelectList(
+				 new List<Object>{
+													new { value = "M" , text = "Masculino" },
+													new { value = "F" , text = "Femenino" }
+							  }, "value", "text", 2), htmlAttributes: new { @class = "form-control", @required = "true" })
+				@Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		@*<div class="form-group">
+			@Html.Label("* Cual es su sexo", htmlAttributes: new { @class = "control-label col-md-10" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idSeccion, "idSeccion", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idSeccion", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idSeccion, "", new { @class = "text-danger" })
-            </div>
-        </div>
+			<span class="_5k_3" data-type="radio" data-name="gender_wrapper" id="u_1_o">
+				<span class="_5k_2 _5dba">
+					<label class="_58mt" for="u_1_4">Mujer</label>
+					<input type="radio" class="_8esa" name="Sexo" value="F" id="u_1_4" required>
+				</span>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.idPerfil, "idPerfil", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("idPerfil", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.idPerfil, "", new { @class = "text-danger" })
-            </div>
-        </div>
+				<span class="_5k_2 _5dba">
+					<label class="_58mt" for="u_1_5">Homb re</label>
+					<input type="radio" class="_8esa" name="Sexo" value="M" id="u_1_5" required>
+				</span>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+			</span>
+				</div>*@
+
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })*@
+		<div class="col-md-8">
+			@Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "* Dirección", @required = "true", @maxlength = "30", @onchange = "ValidarNomDesc(this.value, this.id)", @onkeypress = "return calle(event)", @style = "color:gold" } })
+			@Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+			@*</div>*@
+		</div>
+
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+		<div class="col-md-8">
+			@Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "* Correo electrónico", @required = "true", @maxlength = "30", @onchange = "ValidaCorreo(this.value, this.id)", @onkeypress = "return calle(event)", @style = "color:gold" } })
+			@Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+			@*</div>*@
+		</div>
+
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.Contraseña, htmlAttributes: new { @class = "input2", @type = "text", @placeholder = "Contraseña", @required = "true", @maxlength = "30",  @onkeypress = "return calle(event)" } })*@
+		<div class="col-md-8">
+			@*<input class="input" type="password" value="Contraseña" name="Contraseña" placeholder="Contraseña" required maxlength="30">*@
+			@Html.EditorFor(model => model.Contraseña, new { htmlAttributes = new { @class = "input1", @type = "text", @placeholder = "* Contraseña", @required = "true", @style = "color:gold" } })
+			@*<input class="input" id="Contraseña" type="password" placeholder="* Contraseña" name="Contraseña" required maxlength="30" style = "color:gold" >*@
+			@Html.ValidationMessageFor(model => model.Contraseña, "", new { @class = "text-danger" })
+			@*</div>*@
+		</div>
+		@*<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
+					<span class="input-group-btn">
+						<button type="button" id="btn-mostrar-pass" title="Mostar contraseña" style=" background-color: #808080;width:0px; height:0px; top: 0px; ">
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+								<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+
+							</svg>
+						</button>
+
+					</span>
+				</div>
+
+			<br />*@
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })*@
+		<div class="col-md-8">
+			@Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "input1", @onchange = "Tel(this.value, this.id)", @onkeypress = "return calle(event)", @placeholder = "* Telefono", @required = "true" } })
+			@Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+			@*</div>*@
+		</div>
+
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.idSeccion, "idSeccion", htmlAttributes: new { @class = "control-label col-md-2" })*@
+		<div class="col-md-8">
+			@*@Html.DropDownList("idSeccion", null, htmlAttributes: new { })*@
+			@Html.DropDownList("idSeccion", null, "Selecciona tu sección", htmlAttributes: new { @class = "form-control", @required = "true" })
+			@Html.ValidationMessageFor(model => model.idSeccion, "", new { @class = "text-danger" })
+			@*</div>*@
+		</div>
+
+		@*<div class="form-group">
+				@Html.LabelFor(model => model.idPerfil, "idPerfil", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownList("idPerfil", null, htmlAttributes: new { @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.idPerfil, "", new { @class = "text-danger" })
+				</div>
+			</div>*@
+	</div>
+	@*</div>
+		</div>*@
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="box-footer">
+				@*<button type="submit" value="Registrarse" class="btn btn-success" style="width:100px; height:40px">Registrarse</button>*@
+				@*<button type="button" class="btn btn-success" style="width:100px; height:40px" onclick="limpiar()">Limpiar</button>*@
+
+				<br />
+				<p class="otra-opcion"><button class="btn3" type="submit" value="REGISTRARSE" style="width:200px; height:60px">Registrarse</button></p>
+
+				<p class="otra-opcion"><a class="otra-opcion" href="~/Logueo/Index">Ya tengo Cuenta</a></p>
+
+				<button type="submit" value="Regresar" class="btn pull-right" style="width:100px; height:40px">Regresar</button>
+			</div>
+		</div>
+	</div>
+	@*</div>*@
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
+<script>
+	var activadoMostrar = false;
+	$('#btn-mostrar-pass1').click(function () {
+		if (activadoMostrar) {
+			activadoMostrar = false; //La cambiamos a 0
+			$('#Contraseña').removeAttr("type", "text"); //Removemos el atributo de Tipo Texto
+			$('#Contraseña').prop("type", "password"); //Agregamos el atributo de Tipo Contraseña
+		} else {
+			activadoMostrar = true;
+			$('#Contraseña').removeAttr("type", "password"); //Removemos el atributo de Tipo Contraseña
+			$('#Contraseña').prop("type", "text"); //Agregamos el atributo de Tipo Texto(Para que se vea la Contraseña escribida)
+		}
+	});
+</script>
+
+@*<div>
+		@Html.ActionLink("Back to List", "Index")
+	</div>*@
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+	mensaje();
+</script>
