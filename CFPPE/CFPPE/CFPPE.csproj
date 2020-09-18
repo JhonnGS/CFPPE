@@ -276,7 +276,9 @@
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ILogRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -511,7 +513,6 @@
     <Content Include="Views\RegUser\Details.cshtml" />
     <Content Include="Views\RegUser\Edit.cshtml" />
     <Content Include="Views\RegUser\Index.cshtml" />
-    <Content Include="Views\Shared\MasterPageAl.cshtml" />
     <Content Include="Views\RegUser\RegAl.cshtml" />
     <Content Include="Views\seccions\Create.cshtml" />
     <Content Include="Views\seccions\Delete.cshtml" />
@@ -530,6 +531,13 @@
     <Content Include="Views\alumnos\Details.cshtml" />
     <Content Include="Views\alumnos\Edit.cshtml" />
     <Content Include="Views\alumnos\Index.cshtml" />
+
+    <Content Include="Views\RegUser\RegMa.cshtml" />
+    <Content Include="Views\RegUser\RegTP.cshtml" />
+    <Content Include="Views\RegUser\RegAd.cshtml" />
+    <Content Include="Views\RegUser\Recupera.cshtml" />
+    <Content Include="Views\RegUser\RegADM.cshtml" />
+
     <Content Include="Views\inscripcions\Create.cshtml" />
     <Content Include="Views\inscripcions\Delete.cshtml" />
     <Content Include="Views\inscripcions\Details.cshtml" />
@@ -543,6 +551,7 @@
     <Content Include="Views\maestros\CreateActividades.cshtml" />
     <Content Include="Views\maestros\CreateMateria.cshtml" />
     <Content Include="Views\maestros\CreateTarea.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -129,7 +129,13 @@ namespace CFPPE.Controllers
             base.Dispose(disposing);
         }
 
-		public ActionResult RecientesList()
+		public ActionResult MasterPageAl()
+		{
+			
+			return View();
+		}
+
+		public ActionResult RecientesACList()
 		{
 
 			var actividades = db.actividades.Include(ac => ac.idAlumno).Include(ac => ac.idMaestro).Include(ac => ac.idMateria);
