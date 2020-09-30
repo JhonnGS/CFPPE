@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using CFPPE.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using CFPPE.Models;
 
 namespace CFPPE.Controllers
 {
@@ -37,7 +33,7 @@ namespace CFPPE.Controllers
         }
 
         // GET: maestros/Create
-        public ActionResult Create()
+      /*  public ActionResult Create()
         {
             ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre");
             return View();
@@ -59,7 +55,7 @@ namespace CFPPE.Controllers
 
             ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", maestros.idUsuario);
             return View(maestros);
-        }
+        }*/
 
         // GET: maestros/Edit/5
         public ActionResult Edit(int? id)
@@ -128,9 +124,22 @@ namespace CFPPE.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult CreateActividades()
+        {
+           
+            ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre");
+            ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia");
+            ViewBag.idMaestro = new SelectList(db.maestros, "idMaestro", "Nombre");
+
+           
+            return View();
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateActividades([Bind(Include = "idActividad,idAlumno,idMateria,NombreA,Tema,Calificacion,FechaInicio,FechaEntrega,Detalle,TempoActividad,Valor,idMaestro")] actividades actividad)
+        public ActionResult CreateActividades([Bind(Include = "idActividad,idAlumno,idMateria,NombreA,Tema,Calificacion,FechaInicio,FechaEntrega,Detalle,TempoActividad,ValorA,idMaestro")] actividades actividad)
         {
             if (ModelState.IsValid)
             {
@@ -138,24 +147,57 @@ namespace CFPPE.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-           // ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", maestros.idUsuario);
+            ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre", actividad.idAlumno);
+            ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia", actividad.idMateria);
+            ViewBag.idMaestro = new SelectList(db.maestros, "idMaestro", "Nombre",actividad.idMaestro);
+            
+            // ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", maestros.idUsuario);
             return View(actividad);
         }
 
-        public ActionResult CreateMateria([Bind(Include = "idMateria,idSeccion,idMaestro,Materia,CodigoM,FechaIN,FechaFI,Descripcion,Status,Grado,Grupo, idTipoMateria")] materia materia1)
+        public ActionResult CreateMateria()
+        {
+           
+            ViewBag.idSeccion = new SelectList(db.seccion, "idSeccion", "Nombre");
+            ViewBag.idMaestro = new SelectList(db.maestros, "idMaestro", "Nombre");
+            ViewBag.idTipoMateria = new SelectList(db.tipomateria, "idTipoMateria", "Nombre");
+
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateMateria([Bind(Include = "idMateria,idSeccion,idMaestro,Materia,CodigoM,FechaIN,FechaFI,Descripcion,Status,Grado,Grupo,idTipoMateria")] materia mater)
         {
             if (ModelState.IsValid)
             {
-                db.materia.Add(materia1);
-                db.SaveChanges();
+                db.materia.Add(mater);
+                 db.SaveChanges();
                 return RedirectToAction("Index");
+                 
             }
-
-            // ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", maestros.idUsuario);
-            return View(materia1);
+            ViewBag.idSeccion = new SelectList(db.seccion, "idSeccion", "Nombre", mater.idSeccion);
+            ViewBag.idMaestro = new SelectList(db.maestros, "idMaestro", "Nombre", mater.idMaestro);
+            ViewBag.idTipoMateria = new SelectList(db.tipomateria, "idTipoMateria", "Nombre", mater.idTipoMateria);
+           
+            return View(mater);
         }
 
+
+        public ActionResult CreateTarea()
+        {
+            
+            ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre");
+            ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia");
+            ViewBag.idMaestro = new SelectList(db.maestros, "idMateria", "Nombre");
+
+            
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateTarea([Bind(Include = "idTarea,idAlumno,idMateria,idMaestro,NombreT,Tema,CalificacionA,CalificacionR,FechaInicio,Fecha_E,Detalle,Archivo")] tareas tarea)
         {
             if (ModelState.IsValid)
@@ -164,6 +206,9 @@ namespace CFPPE.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre", tarea.idAlumno);
+            ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia", tarea.idMateria);
+            ViewBag.idMaestro = new SelectList(db.maestros, "idMateria", "Nombre", tarea.idMaestro);
 
             // ViewBag.idUsuario = new SelectList(db.usuario, "idUsuario", "Nombre", maestros.idUsuario);
             return View(tarea);
