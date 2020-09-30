@@ -1,9 +1,9 @@
 ﻿//esta es la funcion que contiene la condicion del cual se evaluara y enviara el mensaje a la vista de contratos 
 function mensaje() {
 	if ($("#mensaje").val() == "1") {
-		InfoTime("Mensaje", "Información enviada");
+		InfoTime("Mensaje", "Información enviada, ha sido registrado en CPF digital");
 	} if ($("#mensaje").val == "0") {
-		InfoTime("Mensaje", "Error información no enviada");
+		InfoTime("Mensaje", "Error del servidor información no enviada");
 	}
 }
 
@@ -24,7 +24,7 @@ function comprueba_extension(archivo) {
 			}
 		}
 		if (!permitida) {//evalua si partida es diferente es decir si tiene un valor entrara al mensaje sino pasa al else
-			InfoTime("Alerta", 'Sólo se permiten cargar archivos con extensiones: ".pdf"');
+			InfoTime("Alerta", 'Sólo se permiten cargar archivos con extensiones: ".jpg"');
 			var vacio = document.getElementById(archivo).value = "";//pone en blanco el textbox
 		} else {
 			return 1;
@@ -255,13 +255,13 @@ function valusuario(input, id) {
 }
 
 //esta es la funcion que contiene la condicion del cual se evaluara y enviara el mensaje a la vista de contratos 
-function mensaje() {
-	if ($("#mensaje").val() == "1") {
-		InfoTime("Mensaje", "Información enviada, Por el momento no cuenta con Home se notificara cuando este listo");
-	} if ($("#mensaje").val == "0") {
-		InfoTime("Mensaje", "Error información no enviada");
-	}
-}
+//function mensaje() {
+//	if ($("#mensaje").val() == "1") {
+//		InfoTime("Mensaje", "Información enviada, Por el momento no cuenta con Home se notificara cuando este listo");
+//	} if ($("#mensaje").val == "0") {
+//		InfoTime("Mensaje", "Error información no enviada");
+//	}
+//}
 
 ////esta es la funcion que contiene la condicion del cual se evaluara y enviara el mensaje 
 //function mensaje() {
@@ -282,4 +282,26 @@ $('#btn-mostrar-pass').click(function () {
 	}
 });
 
+//var activadoMostrar = false;
+//$('#btn-ocultar').click(function () {
+//	if (activadoMostrar) {
+//		activadoMostrar = false; //La cambiamos a 0
+//		$('#txtPass').removeAttr("type", "text"); //Removemos el atributo de Tipo Texto
+//		$('#txtPass').prop("type", "password"); //Agregamos el atributo de Tipo Contraseña
+//	} else {
+		
+//	}
+//});
 
+//var activadoMostrar = false;
+//$('#btn-mostrar-pass1').click(function () {
+//	if (activadoMostrar) {
+//		activadoMostrar = false; //La cambiamos a 0
+//		$('#Contraseña').removeAttr("type", "text"); //Removemos el atributo de Tipo Texto
+//		$('#Contraseña').prop("type", "password"); //Agregamos el atributo de Tipo Contraseña
+//	} else {
+//		activadoMostrar = true;
+//		$('#Contraseña').removeAttr("type", "password"); //Removemos el atributo de Tipo Contraseña
+//		$('#Contraseña').prop("type", "text"); //Agregamos el atributo de Tipo Texto(Para que se vea la Contraseña escribida)
+//	}
+//});

@@ -1,10 +1,10 @@
 ﻿@model CFPPE.Models.usuario
 
 @{
-	ViewBag.Title = "Registro nuevo Alumnos";
+	ViewBag.Title = "Registro nuevo de Maestro";
 }
 
-<h1 class="title-form">Formulario de registro para alumnos de CPF digital </h1>
+<h1 class="title-form">Formulario de registro para los maestros de CPF digital </h1>
 
 <section>
 	<script src="@Url.Content("~/Scripts/Val.js")"></script>
@@ -18,9 +18,9 @@
 	<input type="hidden" id="mensaje" value="@ViewBag.mensaje" />
 
 	<div class="father-form">
-		<h2 class="title-form">Nuevo usuario de tipo Alumno </h2>
+		<h2 class="title-form">Nuevo usuario de tipo Maestro</h2>
 		<hr />
-		<h4>Formulario para registro de nuevo alumno. Favor de Rellenar los campos marcados con * son obligatorios</h4>
+		<h4>Formulario para registro de nuevo Maestro. Favor de Rellenar los campos marcados con * son obligatorios</h4>
 		<hr />
 		@*<div class="box-body">
 			<div class="row">*@
@@ -110,20 +110,20 @@
 			@Html.ValidationMessageFor(model => model.Contraseña, "", new { @class = "text-danger" })
 			@*</div>*@
 		</div>
-			@*<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
-				<span class="input-group-btn">
-					<button type="button" id="btn-mostrar-pass" title="Mostar contraseña" style=" background-color: #808080;width:0px; height:0px; top: 0px; ">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-							<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+		@*<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
+					<span class="input-group-btn">
+						<button type="button" id="btn-mostrar-pass" title="Mostar contraseña" style=" background-color: #808080;width:0px; height:0px; top: 0px; ">
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+								<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
 
-						</svg>
-					</button>
+							</svg>
+						</button>
 
-				</span>
-			</div>
-		
-		<br />*@
+					</span>
+				</div>
+
+			<br />*@
 		@*<div class="form-group">
 			@Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })*@
 		<div class="col-md-8">
@@ -159,7 +159,7 @@
 				@*<button type="button" class="btn btn-success" style="width:100px; height:40px" onclick="limpiar()">Limpiar</button>*@
 
 				<br />
-				<p class="otra-opcion"><button class="btn3" type="submit" value="REGISTRARSE" style="width:200px; height:60px" >Registrarse</button></p>
+				<p class="otra-opcion"><button class="btn3" type="submit" value="REGISTRARSE" style="width:200px; height:60px">Registrarse</button></p>
 
 				<p class="otra-opcion"><a class="otra-opcion" href="~/Logueo/Index">Ya tengo Cuenta</a></p>
 
