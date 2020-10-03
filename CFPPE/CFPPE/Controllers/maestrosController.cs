@@ -125,6 +125,18 @@ namespace CFPPE.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult IndexActividades()
+        {
+
+            //ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre");
+           // ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia");
+           // ViewBag.idMaestro = new SelectList(db.maestros, "idMaestro", "Nombre");
+
+
+            return View();
+        }
+
+
         public ActionResult CreateActividades()
         {
            
@@ -155,6 +167,17 @@ namespace CFPPE.Controllers
             return View(actividad);
         }
 
+        public ActionResult IndexMateria()
+        {
+
+            //ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre");
+           // ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia");
+           // ViewBag.idMaestro = new SelectList(db.maestros, "idMateria", "Nombre");
+
+
+            return View();
+        }
+
         public ActionResult CreateMateria()
         {
            
@@ -182,6 +205,17 @@ namespace CFPPE.Controllers
             ViewBag.idTipoMateria = new SelectList(db.tipomateria, "idTipoMateria", "Nombre", mater.idTipoMateria);
            
             return View(mater);
+        }
+
+        public ActionResult IndexTarea()
+        {
+
+            //ViewBag.idAlumno = new SelectList(db.alumnos, "idAlumno", "Nombre");
+            //ViewBag.idMateria = new SelectList(db.materia, "idMateria", "Materia");
+            //ViewBag.idMaestro = new SelectList(db.maestros, "idMateria", "Nombre");
+
+
+            return View();
         }
 
 
