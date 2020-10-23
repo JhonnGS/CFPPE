@@ -14,7 +14,7 @@ namespace CFPPE.Models
     
     public partial class padretutor
     {
-        public int idPadre { get; set; }
+        public long idPadre { get; set; }
         public string Nombre { get; set; }
         public string APP { get; set; }
         public string APM { get; set; }
@@ -23,7 +23,7 @@ namespace CFPPE.Models
         public string Correo { get; set; }
         public string Contraseña { get; set; }
         public string Telefono { get; set; }
-        public int idUsuario { get; set; }
+        public long idUsuario { get; set; }
     
         public virtual usuario usuario { get; set; }
     }

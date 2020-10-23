@@ -9,9 +9,9 @@
           <Key>
             <PropertyRef Name="idActividad" />
           </Key>
-          <Property Name="idActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idAlumno" Type="int" Nullable="false" />
-          <Property Name="idMateria" Type="int" Nullable="false" />
+          <Property Name="idActividad" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" Nullable="false" />
+          <Property Name="idMateria" Type="uint" Nullable="false" />
           <Property Name="NombreA" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Tema" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Calificacion" Type="int" Nullable="false" />
@@ -20,13 +20,13 @@
           <Property Name="Detalle" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="TempoActividad" Type="time" Precision="0" Nullable="false" />
           <Property Name="ValorA" Type="int" Nullable="false" />
-          <Property Name="idMaestro" Type="int" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="administrador">
           <Key>
             <PropertyRef Name="idAdministrador" />
           </Key>
-          <Property Name="idAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAdministrador" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
@@ -35,13 +35,13 @@
           <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="alumnos">
           <Key>
             <PropertyRef Name="idAlumno" />
           </Key>
-          <Property Name="idAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
@@ -50,14 +50,14 @@
           <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="archivodocalum">
           <Key>
             <PropertyRef Name="idArchivoDA" />
           </Key>
-          <Property Name="idArchivoDA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="idArchivoDA" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Archivo" Type="bit" Nullable="false" />
           <Property Name="FechaCreacion" Type="date" Nullable="false" />
@@ -67,8 +67,8 @@
           <Key>
             <PropertyRef Name="idArchivoDM" />
           </Key>
-          <Property Name="idArchivoDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="idArchivoDM" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Archivo" Type="bit" Nullable="false" />
           <Property Name="FechaCreacion" Type="date" Nullable="false" />
@@ -78,8 +78,8 @@
           <Key>
             <PropertyRef Name="idArchivoPA" />
           </Key>
-          <Property Name="idArchivoPA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="idArchivoPA" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Archivo" Type="bit" Nullable="false" />
           <Property Name="FechaCreacion" Type="date" Nullable="false" />
@@ -89,8 +89,8 @@
           <Key>
             <PropertyRef Name="idArchivoPM" />
           </Key>
-          <Property Name="idArchivoPM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="idArchivoPM" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Archivo" Type="bit" Nullable="false" />
           <Property Name="FechaCreacion" Type="date" Nullable="false" />
@@ -100,8 +100,8 @@
           <Key>
             <PropertyRef Name="idAP" />
           </Key>
-          <Property Name="idAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="idAP" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
           <Property Name="Titulo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="FechaCracion" Type="datetime" Precision="0" Nullable="false" />
         </EntityType>
@@ -109,17 +109,17 @@
           <Key>
             <PropertyRef Name="idCalificacion" />
           </Key>
-          <Property Name="idCalificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idMateria" Type="int" Nullable="false" />
-          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="idCalificacion" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMateria" Type="uint" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" Nullable="false" />
           <Property Name="Calificacion" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <EntityType Name="detallepizarron">
           <Key>
             <PropertyRef Name="idDetallePizarron" />
           </Key>
-          <Property Name="idDetallePizarron" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idAP" Type="int" Nullable="false" />
+          <Property Name="idDetallePizarron" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAP" Type="uint" Nullable="false" />
           <Property Name="Documento" Type="blob" Nullable="false" />
           <Property Name="Link" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
@@ -147,12 +147,12 @@
           <Key>
             <PropertyRef Name="idInscripcion" />
           </Key>
-          <Property Name="idInscripcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idInscripcion" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="FechaNac" Type="date" Nullable="false" />
           <Property Name="FechaInscripcion" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="Edad" Type="int" Nullable="false" />
-          <Property Name="idSeccion" Type="int" Nullable="false" />
+          <Property Name="idSeccion" Type="uint" Nullable="false" />
           <Property Name="Grado" Type="int" Nullable="false" />
           <Property Name="Grupo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="AlergiasEnfermedad" Type="varchar" MaxLength="60" Nullable="false" />
@@ -168,8 +168,8 @@
           <Key>
             <PropertyRef Name="idLibMA" />
           </Key>
-          <Property Name="idLibMA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idAlumno" Type="int" Nullable="false" />
+          <Property Name="idLibMA" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" Nullable="false" />
           <Property Name="NombreLib" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Tema" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Documento" Type="bit" Nullable="false" />
@@ -179,8 +179,8 @@
           <Key>
             <PropertyRef Name="idLibMM" />
           </Key>
-          <Property Name="idLibMM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="idLibMM" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
           <Property Name="NombreLib" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Documento" Type="bit" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="45" />
@@ -189,7 +189,7 @@
           <Key>
             <PropertyRef Name="idMaestro" />
           </Key>
-          <Property Name="idMaestro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
@@ -198,15 +198,15 @@
           <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="materia">
           <Key>
             <PropertyRef Name="idMateria" />
           </Key>
-          <Property Name="idMateria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idSeccion" Type="int" Nullable="false" />
-          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="idMateria" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSeccion" Type="uint" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
           <Property Name="Materia" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="CodigoM" Type="varchar" MaxLength="4" Nullable="false" />
           <Property Name="FechaIN" Type="date" Nullable="false" />
@@ -215,13 +215,13 @@
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Grado" Type="int" Nullable="false" />
           <Property Name="Grupo" Type="varchar" MaxLength="1" Nullable="false" />
-          <Property Name="idTipoMateria" Type="int" Nullable="false" />
+          <Property Name="idTipoMateria" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="padretutor">
           <Key>
             <PropertyRef Name="idPadre" />
           </Key>
-          <Property Name="idPadre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPadre" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="35" Nullable="false" />
           <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
@@ -230,13 +230,13 @@
           <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="perfil">
           <Key>
             <PropertyRef Name="idPerfil" />
           </Key>
-          <Property Name="idPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPerfil" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreP" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="45" />
         </EntityType>
@@ -244,7 +244,7 @@
           <Key>
             <PropertyRef Name="idSeccion" />
           </Key>
-          <Property Name="idSeccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSeccion" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Clave" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
@@ -262,10 +262,10 @@
           <Key>
             <PropertyRef Name="idTarea" />
           </Key>
-          <Property Name="idTarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idAlumno" Type="int" Nullable="false" />
-          <Property Name="idMateria" Type="int" Nullable="false" />
-          <Property Name="idMaestro" Type="int" Nullable="false" />
+          <Property Name="idTarea" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAlumno" Type="uint" Nullable="false" />
+          <Property Name="idMateria" Type="uint" Nullable="false" />
+          <Property Name="idMaestro" Type="uint" Nullable="false" />
           <Property Name="NombreT" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Tema" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="CalificacionA" Type="int" Nullable="false" />
@@ -279,7 +279,7 @@
           <Key>
             <PropertyRef Name="idTipoMateria" />
           </Key>
-          <Property Name="idTipoMateria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTipoMateria" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
@@ -287,8 +287,7 @@
           <Key>
             <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Foto" Type="blob" Nullable="false" />
+          <Property Name="idUsuario" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="APP" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
@@ -297,8 +296,10 @@
           <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idSeccion" Type="int" Nullable="false" />
-          <Property Name="idPerfil" Type="int" Nullable="false" />
+          <Property Name="idSeccion" Type="uint" Nullable="false" />
+          <Property Name="Foto" Type="blob" Nullable="false" />
+          <Property Name="idPerfil" Type="uint" Nullable="false" />
+          <Property Name="TokenRecovery" Type="varchar" MaxLength="60" />
         </EntityType>
         <Association Name="AlumnoAc">
           <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
@@ -337,7 +338,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="AlumnoMae">
-          <End Role="maestros" Type="Self.maestros" Multiplicity="0..1" />
+          <End Role="maestros" Type="Self.maestros" Multiplicity="1" />
           <End Role="actividades" Type="Self.actividades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="maestros">
@@ -405,6 +406,18 @@
             </Principal>
             <Dependent Role="detallepizarron">
               <PropertyRef Name="idAP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="iscripseccion">
+          <End Role="seccion" Type="Self.seccion" Multiplicity="1" />
+          <End Role="inscripcion" Type="Self.inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seccion">
+              <PropertyRef Name="idSeccion" />
+            </Principal>
+            <Dependent Role="inscripcion">
+              <PropertyRef Name="idSeccion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -578,24 +591,24 @@
         </Association>
         <Association Name="usuarioM">
           <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
-          <End Role="maestros" Type="Self.maestros" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuario">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="maestros">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="usuarioP">
-          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
           <End Role="padretutor" Type="Self.padretutor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
               <PropertyRef Name="idUsuario" />
             </Principal>
             <Dependent Role="padretutor">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usuarioMaestro">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="maestros" Type="Self.maestros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="maestros">
               <PropertyRef Name="idUsuario" />
             </Dependent>
           </ReferentialConstraint>
@@ -662,6 +675,10 @@
             <End Role="archivospizarronma" EntitySet="archivospizarronma" />
             <End Role="detallepizarron" EntitySet="detallepizarron" />
           </AssociationSet>
+          <AssociationSet Name="iscripseccion" Association="Self.iscripseccion">
+            <End Role="seccion" EntitySet="seccion" />
+            <End Role="inscripcion" EntitySet="inscripcion" />
+          </AssociationSet>
           <AssociationSet Name="MaestroA" Association="Self.MaestroA">
             <End Role="maestros" EntitySet="maestros" />
             <End Role="archivodocmaestro" EntitySet="archivodocmaestro" />
@@ -720,11 +737,11 @@
           </AssociationSet>
           <AssociationSet Name="usuarioM" Association="Self.usuarioM">
             <End Role="usuario" EntitySet="usuario" />
-            <End Role="maestros" EntitySet="maestros" />
-          </AssociationSet>
-          <AssociationSet Name="usuarioP" Association="Self.usuarioP">
-            <End Role="usuario" EntitySet="usuario" />
             <End Role="padretutor" EntitySet="padretutor" />
+          </AssociationSet>
+          <AssociationSet Name="usuarioMaestro" Association="Self.usuarioMaestro">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="maestros" EntitySet="maestros" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -817,6 +834,10 @@
             <End Role="materia" EntitySet="materia" />
             <End Role="calificacion" EntitySet="calificacion" />
           </AssociationSet>
+          <AssociationSet Name="iscripseccion" Association="plataformaModel.iscripseccion">
+            <End Role="seccion" EntitySet="seccion" />
+            <End Role="inscripcion" EntitySet="inscripcion" />
+          </AssociationSet>
           <AssociationSet Name="MaestroL" Association="plataformaModel.MaestroL">
             <End Role="maestros" EntitySet="maestros" />
             <End Role="libretamochmaes" EntitySet="libretamochmaes" />
@@ -829,7 +850,7 @@
             <End Role="maestros" EntitySet="maestros" />
             <End Role="tareas" EntitySet="tareas" />
           </AssociationSet>
-          <AssociationSet Name="usuarioM" Association="plataformaModel.usuarioM">
+          <AssociationSet Name="usuarioMaestro" Association="plataformaModel.usuarioMaestro">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="maestros" EntitySet="maestros" />
           </AssociationSet>
@@ -845,7 +866,7 @@
             <End Role="tipomateria" EntitySet="tipomateria" />
             <End Role="materia" EntitySet="materia" />
           </AssociationSet>
-          <AssociationSet Name="usuarioP" Association="plataformaModel.usuarioP">
+          <AssociationSet Name="usuarioM" Association="plataformaModel.usuarioM">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="padretutor" EntitySet="padretutor" />
           </AssociationSet>
@@ -862,9 +883,9 @@
           <Key>
             <PropertyRef Name="idActividad" />
           </Key>
-          <Property Name="idActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idAlumno" Type="Int32" Nullable="false" />
-          <Property Name="idMateria" Type="Int32" Nullable="false" />
+          <Property Name="idActividad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" />
+          <Property Name="idMateria" Type="Int64" Nullable="false" />
           <Property Name="NombreA" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Tema" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Calificacion" Type="Int32" Nullable="false" />
@@ -873,7 +894,7 @@
           <Property Name="Detalle" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="TempoActividad" Type="Time" Nullable="false" />
           <Property Name="ValorA" Type="Int32" Nullable="false" />
-          <Property Name="idMaestro" Type="Int32" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoAc" FromRole="actividades" ToRole="alumnos" />
           <NavigationProperty Name="maestros" Relationship="plataformaModel.AlumnoMae" FromRole="actividades" ToRole="maestros" />
           <NavigationProperty Name="materia" Relationship="plataformaModel.AlumnoMat" FromRole="actividades" ToRole="materia" />
@@ -882,7 +903,7 @@
           <Key>
             <PropertyRef Name="idAdministrador" />
           </Key>
-          <Property Name="idAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAdministrador" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -891,14 +912,14 @@
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioAD" FromRole="administrador" ToRole="usuario" />
         </EntityType>
         <EntityType Name="alumnos">
           <Key>
             <PropertyRef Name="idAlumno" />
           </Key>
-          <Property Name="idAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -907,7 +928,7 @@
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoAc" FromRole="alumnos" ToRole="actividades" />
           <NavigationProperty Name="archivoprealum" Relationship="plataformaModel.AlumnoAR" FromRole="alumnos" ToRole="archivoprealum" />
           <NavigationProperty Name="calificacion" Relationship="plataformaModel.AlumnoCA" FromRole="alumnos" ToRole="calificacion" />
@@ -920,8 +941,8 @@
           <Key>
             <PropertyRef Name="idArchivoDA" />
           </Key>
-          <Property Name="idArchivoDA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="idArchivoDA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Archivo" Type="Boolean" Nullable="false" />
           <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
@@ -932,8 +953,8 @@
           <Key>
             <PropertyRef Name="idArchivoDM" />
           </Key>
-          <Property Name="idArchivoDM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="idArchivoDM" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Archivo" Type="Boolean" Nullable="false" />
           <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
@@ -944,8 +965,8 @@
           <Key>
             <PropertyRef Name="idArchivoPA" />
           </Key>
-          <Property Name="idArchivoPA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="idArchivoPA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Archivo" Type="Boolean" Nullable="false" />
           <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
@@ -956,8 +977,8 @@
           <Key>
             <PropertyRef Name="idArchivoPM" />
           </Key>
-          <Property Name="idArchivoPM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="idArchivoPM" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Archivo" Type="Boolean" Nullable="false" />
           <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
@@ -968,8 +989,8 @@
           <Key>
             <PropertyRef Name="idAP" />
           </Key>
-          <Property Name="idAP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="idAP" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <Property Name="Titulo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="FechaCracion" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="detallepizarron" Relationship="plataformaModel.idAP" FromRole="archivospizarronma" ToRole="detallepizarron" />
@@ -979,9 +1000,9 @@
           <Key>
             <PropertyRef Name="idCalificacion" />
           </Key>
-          <Property Name="idCalificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idMateria" Type="Int32" Nullable="false" />
-          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="idCalificacion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMateria" Type="Int64" Nullable="false" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" />
           <Property Name="Calificacion1" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="alumnos" Relationship="plataformaModel.AlumnoCA" FromRole="calificacion" ToRole="alumnos" />
           <NavigationProperty Name="materia" Relationship="plataformaModel.MateriaCA" FromRole="calificacion" ToRole="materia" />
@@ -990,8 +1011,8 @@
           <Key>
             <PropertyRef Name="idDetallePizarron" />
           </Key>
-          <Property Name="idDetallePizarron" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idAP" Type="Int32" Nullable="false" />
+          <Property Name="idDetallePizarron" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAP" Type="Int64" Nullable="false" />
           <Property Name="Documento" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="Link" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="archivospizarronma" Relationship="plataformaModel.idAP" FromRole="detallepizarron" ToRole="archivospizarronma" />
@@ -1020,12 +1041,12 @@
           <Key>
             <PropertyRef Name="idInscripcion" />
           </Key>
-          <Property Name="idInscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idInscripcion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="FechaNac" Type="DateTime" Nullable="false" />
           <Property Name="FechaInscripcion" Type="DateTime" Nullable="false" />
           <Property Name="Edad" Type="Int32" Nullable="false" />
-          <Property Name="idSeccion" Type="Int32" Nullable="false" />
+          <Property Name="idSeccion" Type="Int64" Nullable="false" />
           <Property Name="Grado" Type="Int32" Nullable="false" />
           <Property Name="Grupo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="AlergiasEnfermedad" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
@@ -1036,13 +1057,14 @@
           <Property Name="TelCasa" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TelTrabajo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="seccion" Relationship="plataformaModel.iscripseccion" FromRole="inscripcion" ToRole="seccion" />
         </EntityType>
         <EntityType Name="libretamochalum">
           <Key>
             <PropertyRef Name="idLibMA" />
           </Key>
-          <Property Name="idLibMA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idAlumno" Type="Int32" Nullable="false" />
+          <Property Name="idLibMA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" />
           <Property Name="NombreLib" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Tema" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Documento" Type="Boolean" Nullable="false" />
@@ -1053,8 +1075,8 @@
           <Key>
             <PropertyRef Name="idLibMM" />
           </Key>
-          <Property Name="idLibMM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="idLibMM" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <Property Name="NombreLib" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Documento" Type="Boolean" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -1064,7 +1086,7 @@
           <Key>
             <PropertyRef Name="idMaestro" />
           </Key>
-          <Property Name="idMaestro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -1073,7 +1095,7 @@
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoMae" FromRole="maestros" ToRole="actividades" />
           <NavigationProperty Name="archivodocmaestro" Relationship="plataformaModel.MaestroA" FromRole="maestros" ToRole="archivodocmaestro" />
           <NavigationProperty Name="archivopremaes" Relationship="plataformaModel.presentacion" FromRole="maestros" ToRole="archivopremaes" />
@@ -1081,15 +1103,15 @@
           <NavigationProperty Name="libretamochmaes" Relationship="plataformaModel.MaestroL" FromRole="maestros" ToRole="libretamochmaes" />
           <NavigationProperty Name="materia" Relationship="plataformaModel.MaestroM" FromRole="maestros" ToRole="materia" />
           <NavigationProperty Name="tareas" Relationship="plataformaModel.MaestroT" FromRole="maestros" ToRole="tareas" />
-          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioM" FromRole="maestros" ToRole="usuario" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioMaestro" FromRole="maestros" ToRole="usuario" />
         </EntityType>
         <EntityType Name="materia">
           <Key>
             <PropertyRef Name="idMateria" />
           </Key>
-          <Property Name="idMateria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idSeccion" Type="Int32" Nullable="false" />
-          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="idMateria" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSeccion" Type="Int64" Nullable="false" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <Property Name="Materia1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="CodigoM" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="FechaIN" Type="DateTime" Nullable="false" />
@@ -1098,7 +1120,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="Grado" Type="Int32" Nullable="false" />
           <Property Name="Grupo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="idTipoMateria" Type="Int32" Nullable="false" />
+          <Property Name="idTipoMateria" Type="Int64" Nullable="false" />
           <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoMat" FromRole="materia" ToRole="actividades" />
           <NavigationProperty Name="calificacion" Relationship="plataformaModel.MateriaCA" FromRole="materia" ToRole="calificacion" />
           <NavigationProperty Name="maestros" Relationship="plataformaModel.MaestroM" FromRole="materia" ToRole="maestros" />
@@ -1110,7 +1132,7 @@
           <Key>
             <PropertyRef Name="idPadre" />
           </Key>
-          <Property Name="idPadre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPadre" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
           <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -1119,14 +1141,14 @@
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="idUsuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioP" FromRole="padretutor" ToRole="usuario" />
+          <Property Name="idUsuario" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioM" FromRole="padretutor" ToRole="usuario" />
         </EntityType>
         <EntityType Name="perfil">
           <Key>
             <PropertyRef Name="idPerfil" />
           </Key>
-          <Property Name="idPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPerfil" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="usuario" Relationship="plataformaModel.perfil1" FromRole="perfil" ToRole="usuario" />
@@ -1135,10 +1157,11 @@
           <Key>
             <PropertyRef Name="idSeccion" />
           </Key>
-          <Property Name="idSeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSeccion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Clave" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inscripcion" Relationship="plataformaModel.iscripseccion" FromRole="seccion" ToRole="inscripcion" />
           <NavigationProperty Name="materia" Relationship="plataformaModel.SeccionM" FromRole="seccion" ToRole="materia" />
           <NavigationProperty Name="usuario" Relationship="plataformaModel.seccion1" FromRole="seccion" ToRole="usuario" />
         </EntityType>
@@ -1155,10 +1178,10 @@
           <Key>
             <PropertyRef Name="idTarea" />
           </Key>
-          <Property Name="idTarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idAlumno" Type="Int32" Nullable="false" />
-          <Property Name="idMateria" Type="Int32" Nullable="false" />
-          <Property Name="idMaestro" Type="Int32" Nullable="false" />
+          <Property Name="idTarea" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAlumno" Type="Int64" Nullable="false" />
+          <Property Name="idMateria" Type="Int64" Nullable="false" />
+          <Property Name="idMaestro" Type="Int64" Nullable="false" />
           <Property Name="NombreT" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Tema" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="CalificacionA" Type="Int32" Nullable="false" />
@@ -1175,7 +1198,7 @@
           <Key>
             <PropertyRef Name="idTipoMateria" />
           </Key>
-          <Property Name="idTipoMateria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTipoMateria" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="materia" Relationship="plataformaModel.TipoMat" FromRole="tipomateria" ToRole="materia" />
@@ -1184,8 +1207,7 @@
           <Key>
             <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Foto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="idUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="APP" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -1194,12 +1216,14 @@
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="idSeccion" Type="Int32" Nullable="false" />
-          <Property Name="idPerfil" Type="Int32" Nullable="false" />
+          <Property Name="idSeccion" Type="Int64" Nullable="false" />
+          <Property Name="Foto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="idPerfil" Type="Int64" Nullable="false" />
+          <Property Name="TokenRecovery" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="administrador" Relationship="plataformaModel.usuarioAD" FromRole="usuario" ToRole="administrador" />
           <NavigationProperty Name="alumnos" Relationship="plataformaModel.usuarioA" FromRole="usuario" ToRole="alumnos" />
-          <NavigationProperty Name="maestros" Relationship="plataformaModel.usuarioM" FromRole="usuario" ToRole="maestros" />
-          <NavigationProperty Name="padretutor" Relationship="plataformaModel.usuarioP" FromRole="usuario" ToRole="padretutor" />
+          <NavigationProperty Name="maestros" Relationship="plataformaModel.usuarioMaestro" FromRole="usuario" ToRole="maestros" />
+          <NavigationProperty Name="padretutor" Relationship="plataformaModel.usuarioM" FromRole="usuario" ToRole="padretutor" />
           <NavigationProperty Name="perfil" Relationship="plataformaModel.perfil1" FromRole="usuario" ToRole="perfil" />
           <NavigationProperty Name="seccion" Relationship="plataformaModel.seccion1" FromRole="usuario" ToRole="seccion" />
         </EntityType>
@@ -1216,7 +1240,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="AlumnoMae">
-          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="0..1" />
+          <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
           <End Type="plataformaModel.actividades" Role="actividades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="maestros">
@@ -1383,6 +1407,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="iscripseccion">
+          <End Type="plataformaModel.seccion" Role="seccion" Multiplicity="1" />
+          <End Type="plataformaModel.inscripcion" Role="inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seccion">
+              <PropertyRef Name="idSeccion" />
+            </Principal>
+            <Dependent Role="inscripcion">
+              <PropertyRef Name="idSeccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="MaestroL">
           <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="1" />
           <End Type="plataformaModel.libretamochmaes" Role="libretamochmaes" Multiplicity="*" />
@@ -1419,7 +1455,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="usuarioM">
+        <Association Name="usuarioMaestro">
           <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="1" />
           <End Type="plataformaModel.maestros" Role="maestros" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1467,7 +1503,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="usuarioP">
+        <Association Name="usuarioM">
           <End Type="plataformaModel.usuario" Role="usuario" Multiplicity="1" />
           <End Type="plataformaModel.padretutor" Role="padretutor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1503,7 +1539,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1814,7 +1850,9 @@
           <EntitySetMapping Name="usuario">
             <EntityTypeMapping TypeName="plataformaModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="TokenRecovery" ColumnName="TokenRecovery" />
                 <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
                 <ScalarProperty Name="idSeccion" ColumnName="idSeccion" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
@@ -1824,7 +1862,6 @@
                 <ScalarProperty Name="APM" ColumnName="APM" />
                 <ScalarProperty Name="APP" ColumnName="APP" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Foto" ColumnName="Foto" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
               </MappingFragment>
             </EntityTypeMapping>

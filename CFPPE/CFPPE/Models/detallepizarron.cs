@@ -14,8 +14,8 @@ namespace CFPPE.Models
     
     public partial class detallepizarron
     {
-        public int idDetallePizarron { get; set; }
-        public int idAP { get; set; }
+        public long idDetallePizarron { get; set; }
+        public long idAP { get; set; }
         public byte[] Documento { get; set; }
         public string Link { get; set; }
     

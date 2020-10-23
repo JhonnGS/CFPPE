@@ -22,9 +22,9 @@ namespace CFPPE.Models
             this.tareas = new HashSet<tareas>();
         }
     
-        public int idMateria { get; set; }
-        public int idSeccion { get; set; }
-        public int idMaestro { get; set; }
+        public long idMateria { get; set; }
+        public long idSeccion { get; set; }
+        public long idMaestro { get; set; }
         public string Materia1 { get; set; }
         public string CodigoM { get; set; }
         public System.DateTime FechaIN { get; set; }
@@ -33,7 +33,7 @@ namespace CFPPE.Models
         public int Status { get; set; }
         public int Grado { get; set; }
         public string Grupo { get; set; }
-        public int idTipoMateria { get; set; }
+        public long idTipoMateria { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<actividades> actividades { get; set; }

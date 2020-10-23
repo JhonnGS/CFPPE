@@ -20,8 +20,8 @@ namespace CFPPE.Models
             this.detallepizarron = new HashSet<detallepizarron>();
         }
     
-        public int idAP { get; set; }
-        public int idMaestro { get; set; }
+        public long idAP { get; set; }
+        public long idMaestro { get; set; }
         public string Titulo { get; set; }
         public System.DateTime FechaCracion { get; set; }
     

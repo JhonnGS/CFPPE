@@ -20,7 +20,7 @@ namespace CFPPE.Models
             this.usuario = new HashSet<usuario>();
         }
     
-        public int idPerfil { get; set; }
+        public long idPerfil { get; set; }
         public string NombreP { get; set; }
         public string Descripcion { get; set; }
     

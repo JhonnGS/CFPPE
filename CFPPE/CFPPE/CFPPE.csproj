@@ -169,17 +169,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccessController.cs" />
     <Compile Include="Controllers\alumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-
     <Compile Include="Controllers\inscripcionsController.cs" />
     <Compile Include="Controllers\maestrosController.cs" />
-    
     <Compile Include="Controllers\LogueoRController.cs" />
     <Compile Include="Controllers\perfilController.cs" />
     <Compile Include="Controllers\RegUserController.cs" />
     <Compile Include="Controllers\seccionsController.cs" />
-
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,6 +273,8 @@
     <Compile Include="Models\usuario.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel\RecoveryPasswordViewModel.cs" />
+    <Compile Include="Models\ViewModel\RecoveryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ILogRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
@@ -290,6 +290,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\form.css" />
     <Content Include="Content\LoReg.css" />
+    <Content Include="Content\modern.css" />
     <Content Include="Content\Pal\assets\css\fontawesome-all.min.css" />
     <Content Include="Content\Pal\assets\css\images\overlay.png" />
     <Content Include="Content\Pal\assets\css\main.css" />
@@ -529,15 +530,11 @@
     <Content Include="Views\alumnos\Create.cshtml" />
     <Content Include="Views\alumnos\Delete.cshtml" />
     <Content Include="Views\alumnos\Details.cshtml" />
-    <Content Include="Views\alumnos\Edit.cshtml" />
     <Content Include="Views\alumnos\Index.cshtml" />
-
     <Content Include="Views\RegUser\RegMa.cshtml" />
     <Content Include="Views\RegUser\RegTP.cshtml" />
     <Content Include="Views\RegUser\RegAd.cshtml" />
-    <Content Include="Views\RegUser\Recupera.cshtml" />
     <Content Include="Views\RegUser\RegADM.cshtml" />
-
     <Content Include="Views\inscripcions\Create.cshtml" />
     <Content Include="Views\inscripcions\Delete.cshtml" />
     <Content Include="Views\inscripcions\Details.cshtml" />
@@ -551,7 +548,10 @@
     <Content Include="Views\maestros\CreateActividades.cshtml" />
     <Content Include="Views\maestros\CreateMateria.cshtml" />
     <Content Include="Views\maestros\CreateTarea.cshtml" />
-
+    <Content Include="Views\Access\StartRecovery.cshtml" />
+    <Content Include="Views\Access\Recovery.cshtml" />
+    <Content Include="Views\alumnos\MPA.cshtml" />
+    <Content Include="Views\alumnos\CambioDP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

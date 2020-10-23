@@ -1,0 +1,28 @@
+﻿@model CFPPE.Models.ViewModel.RecoveryPasswordViewModel
+
+@{
+    ViewBag.Title = "Recovery";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="form-style">
+            <form action="@Url.Content("~/Accsess/Recovery")" method="post">
+                @Html.HiddenFor(d => d.token);
+
+                <label>Escriba su nueva contraseña aqui</label>
+                @Html.PasswordFor(d => d.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Password, null, new { style = "color:red;" })
+
+                <label>Vuelve a escribir su nueva contraseña aqui</label>
+                @Html.PasswordFor(d => d.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Password, null, new { style = "color:red;" })
+                <br />
+                <div class="text-right">
+                    <button class="btn btn-primary">Recuperar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

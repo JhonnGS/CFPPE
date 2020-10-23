@@ -172,7 +172,7 @@ namespace CFPPE.Controllers
 		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult RegAl([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil")] usuario usuario, alumnos a, HttpPostedFileBase file)
+		public ActionResult RegAl([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil,TokenRecovery")] usuario usuario, alumnos a, HttpPostedFileBase file)
 		{
 
 			if (file != null)
@@ -186,11 +186,13 @@ namespace CFPPE.Controllers
 
 					//contrato.nombre = filecarga;
 					usuario.Foto = new byte[file.ContentLength];
-			
-						try
+                    file.InputStream.Read(usuario.Foto, 0, file.ContentLength);
+                    System.Diagnostics.Debug.Write("Extensión..." + extension);
+                    try
 						{
 							
 							usuario.idPerfil = 1;
+                        usuario.TokenRecovery = "";
 							db.usuario.Add(usuario);
 							db.SaveChanges();
 

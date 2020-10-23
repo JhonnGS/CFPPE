@@ -14,8 +14,8 @@ namespace CFPPE.Models
     
     public partial class archivopremaes
     {
-        public int idArchivoPM { get; set; }
-        public int idMaestro { get; set; }
+        public long idArchivoPM { get; set; }
+        public long idMaestro { get; set; }
         public string Nombre { get; set; }
         public bool Archivo { get; set; }
         public System.DateTime FechaCreacion { get; set; }

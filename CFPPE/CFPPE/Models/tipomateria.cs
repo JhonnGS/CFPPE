@@ -20,7 +20,7 @@ namespace CFPPE.Models
             this.materia = new HashSet<materia>();
         }
     
-        public int idTipoMateria { get; set; }
+        public long idTipoMateria { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
     

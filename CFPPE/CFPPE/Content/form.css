@@ -48,16 +48,17 @@ body {
 
 /*--INPUT-NOMBRE-----------------*/
 .input1 {
-	color:yellow;
-	width: 48%;
-	padding: 10px;
-	border-radius: 2px;
-	border: none;
-	margin-bottom: 20px;
-	margin-right: 9px;
-	font-size: 15px;
-	border-left: 10px solid #ffd800;
-	transition: all .3s ease;
+    color: yellow;
+    width: 48%;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    margin-bottom: 20px;
+    margin-right: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 10px solid #ffd800;
+    transition: all .3s ease;
 }
 
 	.input1:hover, .input1:focus {
@@ -99,7 +100,9 @@ body {
 	.input3:hover, .input3:focus {
 		border-left: 10px solid #000000;
 	}*/
-
+.strong, b {
+    font-weight: bold;
+}
 /*--INPUT------------------------*/
 .input {
 	color:yellow;

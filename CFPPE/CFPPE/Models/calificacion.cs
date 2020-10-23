@@ -14,9 +14,9 @@ namespace CFPPE.Models
     
     public partial class calificacion
     {
-        public int idCalificacion { get; set; }
-        public int idMateria { get; set; }
-        public int idAlumno { get; set; }
+        public long idCalificacion { get; set; }
+        public long idMateria { get; set; }
+        public long idAlumno { get; set; }
         public string Calificacion1 { get; set; }
     
         public virtual alumnos alumnos { get; set; }

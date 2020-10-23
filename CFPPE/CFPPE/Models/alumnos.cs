@@ -25,7 +25,7 @@ namespace CFPPE.Models
             this.tareas = new HashSet<tareas>();
         }
     
-        public int idAlumno { get; set; }
+        public long idAlumno { get; set; }
         public string Nombre { get; set; }
         public string APP { get; set; }
         public string APM { get; set; }
@@ -34,7 +34,7 @@ namespace CFPPE.Models
         public string Correo { get; set; }
         public string Contraseña { get; set; }
         public string Telefono { get; set; }
-        public int idUsuario { get; set; }
+        public long idUsuario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<actividades> actividades { get; set; }

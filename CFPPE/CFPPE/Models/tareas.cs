@@ -14,10 +14,10 @@ namespace CFPPE.Models
     
     public partial class tareas
     {
-        public int idTarea { get; set; }
-        public int idAlumno { get; set; }
-        public int idMateria { get; set; }
-        public int idMaestro { get; set; }
+        public long idTarea { get; set; }
+        public long idAlumno { get; set; }
+        public long idMateria { get; set; }
+        public long idMaestro { get; set; }
         public string NombreT { get; set; }
         public string Tema { get; set; }
         public int CalificacionA { get; set; }

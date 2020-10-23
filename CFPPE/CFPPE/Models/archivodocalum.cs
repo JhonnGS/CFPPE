@@ -14,8 +14,8 @@ namespace CFPPE.Models
     
     public partial class archivodocalum
     {
-        public int idArchivoDA { get; set; }
-        public int idAlumno { get; set; }
+        public long idArchivoDA { get; set; }
+        public long idAlumno { get; set; }
         public string Nombre { get; set; }
         public bool Archivo { get; set; }
         public System.DateTime FechaCreacion { get; set; }
