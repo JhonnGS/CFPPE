@@ -27,12 +27,11 @@ namespace CFPPE.Controllers
 
         [HttpPost]
         public ActionResult StartRecovery(Models.ViewModel.RecoveryViewModel model)
-        {
-            
+        {            
                 try
                 {
 
-                    if (ModelState.IsValid)
+                    if (!ModelState.IsValid)
                     {
                         return View(model);
                     }
@@ -44,13 +43,13 @@ namespace CFPPE.Controllers
                         var oUser = db.usuario.Where(d => d.Correo == model.Email).FirstOrDefault();
                         if (oUser != null)
                         {
-                            oUser.Nombre = token;
+                            oUser.TokenRecovery = token;
                             db.Entry(oUser).State = System.Data.Entity.EntityState.Modified;
                             db.SaveChanges();
 
                         //enviamos email
                         SendEmail(oUser.Correo,token);
-                    }
+                        }
                     }
                     return View();
                 }
@@ -69,13 +68,13 @@ namespace CFPPE.Controllers
             {
                 if (model.token == null || model.token.Trim().Equals(""))
                 {
-                    return View("Index");
+                    return View("Index", "Logueo");
                 }
                 var oUser = db.usuario.Where(d => d.TokenRecovery == model.token).FirstOrDefault();
                 if (oUser == null)
                 {
                     ViewBag.Error = "Token incorrecto contacte al administrador";
-                    return View("Index");
+                    return View("Index","Logueo");
                 }
             }
           
@@ -125,17 +124,15 @@ namespace CFPPE.Controllers
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
             return sb.ToString();
         }
-
-        #endregion
-
+                
         private void SendEmail(string EmailDestino, string token)
         {
             string EmailOrigen = "jhonn.94gs@gmail.com";
             string Contraseña = "JGZ_7N*94";
             string url = urlDomain+"/Access/Recovery/?token="+token; 
             MailMessage oMailMessage = new MailMessage(EmailOrigen, EmailDestino, "Recuperacion de contraseña",
-            "<p>Correo para recuperar la contraseña</p><br>" +
-            "<a href='" + url + "'>Click para recuperarla<a/>");
+            "<p>Correo para recuperar su contraseña</p><br>" +
+            "<a href='"+url+"'>Click para recuperarla<a/>");
             
 
             oMailMessage.IsBodyHtml = true;
@@ -143,9 +140,6 @@ namespace CFPPE.Controllers
             SmtpClient oSmtpClient = new SmtpClient("smtp.gmail.com");
             oSmtpClient.EnableSsl = true;
             oSmtpClient.UseDefaultCredentials = false;
-
-            //oSmtpClient.Host = "smtp.gmail.com";
-
             oSmtpClient.Port = 587;
             oSmtpClient.Credentials = new System.Net.NetworkCredential(EmailOrigen, Contraseña);
 
@@ -153,5 +147,6 @@ namespace CFPPE.Controllers
             oSmtpClient.Dispose();
         }
 
+        #endregion
     }
 }

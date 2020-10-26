@@ -9,9 +9,9 @@
 <div style="color:green">
     @ViewBag.Message
 </div>
-<div style="color:red">
+@*<div style="color:red">
     @ViewBag.Error
-</div>
+</div>*@
 <div class="row">
 	<form method="post" class="father-form align-center">
 		@if (ViewBag.error == 1)
@@ -50,14 +50,16 @@
 										 <input class="input" type="email" placeholder="Correo electrónico" required maxlength="30" disabled>
 										@*<input class="cajas" type="email" placeholder="Correo" style="color:black" disabled="disabled">*@
 									</div>
-									<div class="form-group mb-3">
+                                    <div class="form-group mb-3">
+
+                                        <input class="input" id="txtPass" type="password" placeholder="Contraseña" required maxlength="30" disabled>
+                                        @*<input class="cajas" id="txtPass" type="password" placeholder="Contraseña" style="color:black" disabled>*@
+                                        
+                                    </div>
+                                    
+									@*<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
 										
-										<input class="input" id="txtPass" type="password" placeholder="Contraseña" required maxlength="30" disabled>
-										@*<input class="cajas" id="txtPass" type="password" placeholder="Contraseña" style="color:black" disabled>*@
-									</div>
-									<div class="col-md-1" style="padding-right: 0px; padding-left: 0px;">
-										<span class="input-group-btn">
-											@*<button id="btn-mostrar-pass" class="btn2 bi-question-circle-fill" title="Mostar Contraseña" style=" border-radius: 0px 5px 5px 0px; background-color: #ffffff; border-right: 1px solid #d2d6de; border-top: 1px solid #d2d6de; border-bottom: 1px solid #d2d6de; border-left: 0px solid #d2d6de; width: 20px; height: 34px; top: 0px; color: #777;"></button>*@
+                                        <span class="input-group-btn">
 											<button disabled type="button" id="btn-mostrar-pass" title="Mostar contraseña" style=" background-color: #808080;width:0px; height:0px; top: 0px; ">
 												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 													<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -67,7 +69,7 @@
 											</button>
 
 										</span>
-									</div>
+									</div>*@
 									@*<div class="form-check mb-4">
 											<label class="form-check-label text-muted">
 												<input class="form-check-input mr-2" type="checkbox" value="">
