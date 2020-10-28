@@ -170,6 +170,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccessController.cs" />
+    <Compile Include="Controllers\AlumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\inscripcionsController.cs" />
     <Compile Include="Controllers\maestrosController.cs" />
@@ -545,6 +546,8 @@
     <Content Include="Views\maestros\CreateTarea.cshtml" />
     <Content Include="Views\Access\StartRecovery.cshtml" />
     <Content Include="Views\Access\Recovery.cshtml" />
+    <Content Include="Views\Alumnos\MasterPageAl.cshtml" />
+    <Content Include="Views\Alumnos\CDPA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
