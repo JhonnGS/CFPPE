@@ -170,7 +170,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccessController.cs" />
-    <Compile Include="Controllers\alumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\inscripcionsController.cs" />
     <Compile Include="Controllers\maestrosController.cs" />
@@ -527,10 +526,6 @@
     <Content Include="Views\perfil\Index.cshtml" />
     <Content Include="Views\Home\Aviso.cshtml" />
     <Content Include="Views\Logueo\Index.cshtml" />
-    <Content Include="Views\alumnos\Create.cshtml" />
-    <Content Include="Views\alumnos\Delete.cshtml" />
-    <Content Include="Views\alumnos\Details.cshtml" />
-    <Content Include="Views\alumnos\Index.cshtml" />
     <Content Include="Views\RegUser\RegMa.cshtml" />
     <Content Include="Views\RegUser\RegTP.cshtml" />
     <Content Include="Views\RegUser\RegAd.cshtml" />
@@ -550,8 +545,6 @@
     <Content Include="Views\maestros\CreateTarea.cshtml" />
     <Content Include="Views\Access\StartRecovery.cshtml" />
     <Content Include="Views\Access\Recovery.cshtml" />
-    <Content Include="Views\alumnos\MPA.cshtml" />
-    <Content Include="Views\alumnos\CambioDP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

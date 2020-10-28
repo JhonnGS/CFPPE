@@ -32,8 +32,6 @@
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
@@ -47,8 +45,6 @@
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
@@ -195,8 +191,6 @@
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
@@ -227,8 +221,6 @@
           <Property Name="APM" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="idUsuario" Type="uint" Nullable="false" />
         </EntityType>
@@ -909,8 +901,6 @@
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioAD" FromRole="administrador" ToRole="usuario" />
@@ -925,8 +915,6 @@
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoAc" FromRole="alumnos" ToRole="actividades" />
@@ -1092,8 +1080,6 @@
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="actividades" Relationship="plataformaModel.AlumnoMae" FromRole="maestros" ToRole="actividades" />
@@ -1138,8 +1124,6 @@
           <Property Name="APM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="idUsuario" Type="Int64" Nullable="false" />
           <NavigationProperty Name="usuario" Relationship="plataformaModel.usuarioM" FromRole="padretutor" ToRole="usuario" />
@@ -1568,8 +1552,6 @@
               <MappingFragment StoreEntitySet="administrador">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
-                <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
                 <ScalarProperty Name="APM" ColumnName="APM" />
@@ -1584,8 +1566,6 @@
               <MappingFragment StoreEntitySet="alumnos">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
-                <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
                 <ScalarProperty Name="APM" ColumnName="APM" />
@@ -1746,8 +1726,6 @@
               <MappingFragment StoreEntitySet="maestros">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
-                <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
                 <ScalarProperty Name="APM" ColumnName="APM" />
@@ -1780,8 +1758,6 @@
               <MappingFragment StoreEntitySet="padretutor">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
-                <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
                 <ScalarProperty Name="APM" ColumnName="APM" />

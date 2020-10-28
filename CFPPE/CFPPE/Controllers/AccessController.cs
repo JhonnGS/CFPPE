@@ -55,8 +55,8 @@ namespace CFPPE.Controllers
                 }
                 catch (Exception es)
                 {
-                    throw new Exception(es.Message);
-                }
+                throw new Exception(es.Message);
+            }
             }
 
         [HttpGet]
