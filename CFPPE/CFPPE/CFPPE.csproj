@@ -549,6 +549,9 @@
     <Content Include="Views\Alumnos\MasterPageAl.cshtml" />
     <Content Include="Views\Alumnos\Index.cshtml" />
     <Content Include="Views\Alumnos\Edit.cshtml" />
+    <Content Include="Views\maestros\IndexTarea.cshtml" />
+    <Content Include="Views\maestros\IndexMateria.cshtml" />
+    <Content Include="Views\maestros\IndexActividades.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

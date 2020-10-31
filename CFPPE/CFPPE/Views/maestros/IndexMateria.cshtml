@@ -1,0 +1,93 @@
+﻿@model IEnumerable<CFPPE.Models.materia>
+
+@{
+    ViewBag.Title = "IndexMateria";
+}
+
+<h2>IndexMateria</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Materia1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maestros.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.seccion.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipomateria.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Materia1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maestros.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.seccion.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipomateria.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idMateria }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idMateria }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idMateria })
+        </td>
+    </tr>
+}
+
+</table>
