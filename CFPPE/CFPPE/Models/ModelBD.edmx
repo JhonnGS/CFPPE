@@ -291,7 +291,7 @@
           <Property Name="idSeccion" Type="uint" Nullable="false" />
           <Property Name="Foto" Type="blob" Nullable="false" />
           <Property Name="idPerfil" Type="uint" Nullable="false" />
-          <Property Name="TokenRecovery" Type="varchar" MaxLength="60" />
+          <Property Name="TokenRecovery" Type="varchar" MaxLength="100" />
         </EntityType>
         <Association Name="AlumnoAc">
           <End Role="alumnos" Type="Self.alumnos" Multiplicity="1" />
@@ -1203,7 +1203,7 @@
           <Property Name="idSeccion" Type="Int64" Nullable="false" />
           <Property Name="Foto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="idPerfil" Type="Int64" Nullable="false" />
-          <Property Name="TokenRecovery" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TokenRecovery" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="administrador" Relationship="plataformaModel.usuarioAD" FromRole="usuario" ToRole="administrador" />
           <NavigationProperty Name="alumnos" Relationship="plataformaModel.usuarioA" FromRole="usuario" ToRole="alumnos" />
           <NavigationProperty Name="maestros" Relationship="plataformaModel.usuarioMaestro" FromRole="usuario" ToRole="maestros" />

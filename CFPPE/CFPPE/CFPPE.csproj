@@ -547,7 +547,8 @@
     <Content Include="Views\Access\StartRecovery.cshtml" />
     <Content Include="Views\Access\Recovery.cshtml" />
     <Content Include="Views\Alumnos\MasterPageAl.cshtml" />
-    <Content Include="Views\Alumnos\CDPA.cshtml" />
+    <Content Include="Views\Alumnos\Index.cshtml" />
+    <Content Include="Views\Alumnos\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,10 +15,11 @@ namespace CFPPE.Controllers
     {
         private plataformaEntities db = new plataformaEntities();
 
-        // GET: Alumnos
+        // GET: Alumnos        
         public ActionResult Index()
         {
-            return View();
+            var usuario = db.usuario.Include(u => u.perfil).Include(u => u.seccion);
+            return View(usuario.ToList());
         }
 
         public ActionResult MasterPageAl()
