@@ -1,0 +1,93 @@
+﻿@model IEnumerable<CFPPE.Models.actividades>
+
+@{
+    ViewBag.Title = "IndexActividades";
+}
+
+<h2>IndexActividades</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TempoActividad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alumnos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maestros.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materia.Materia1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tema)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEntrega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TempoActividad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alumnos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maestros.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materia.Materia1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idActividad }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idActividad }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idActividad })
+        </td>
+    </tr>
+}
+
+</table>
