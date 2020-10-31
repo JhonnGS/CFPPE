@@ -172,7 +172,7 @@ namespace CFPPE.Controllers
 		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult RegAl([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil")] usuario usuario, alumnos a, HttpPostedFileBase file)
+		public ActionResult RegAl([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil,TokenRecovery")] usuario usuario, alumnos a, HttpPostedFileBase file)
 		{
 
 			if (file != null)
@@ -186,11 +186,13 @@ namespace CFPPE.Controllers
 
 					//contrato.nombre = filecarga;
 					usuario.Foto = new byte[file.ContentLength];
-			
-						try
+                    file.InputStream.Read(usuario.Foto, 0, file.ContentLength);
+                    System.Diagnostics.Debug.Write("Extensión..." + extension);
+                    try
 						{
 							
 							usuario.idPerfil = 1;
+                        usuario.TokenRecovery = "";
 							db.usuario.Add(usuario);
 							db.SaveChanges();
 
@@ -247,7 +249,7 @@ namespace CFPPE.Controllers
 		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult RegMa([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil")] usuario usuario, maestros m, HttpPostedFileBase file)
+		public ActionResult RegMa([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idSeccion,idPerfil,TokenRecovery")] usuario usuario, maestros m, HttpPostedFileBase file)
 		{
 
 			if (file != null)
@@ -266,7 +268,8 @@ namespace CFPPE.Controllers
 					{
 
 						usuario.idPerfil = 2;
-						db.usuario.Add(usuario);
+                        usuario.TokenRecovery = "";
+                        db.usuario.Add(usuario);
 						db.SaveChanges();
 
 						m.idUsuario = usuario.idUsuario;
@@ -322,7 +325,7 @@ namespace CFPPE.Controllers
 		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult RegTP([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idPerfil")] usuario usuario, padretutor tp, HttpPostedFileBase file)
+		public ActionResult RegTP([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idPerfil,tokenRecovery")] usuario usuario, padretutor tp, HttpPostedFileBase file)
 		{
 
 			if (file != null)
@@ -341,7 +344,8 @@ namespace CFPPE.Controllers
 					{
 
 						usuario.idPerfil = 3;
-						db.usuario.Add(usuario);
+                        usuario.TokenRecovery = "";
+                        db.usuario.Add(usuario);
 						db.SaveChanges();
 
 						tp.idUsuario = usuario.idUsuario;
@@ -397,7 +401,7 @@ namespace CFPPE.Controllers
 		// más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult RegAd([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idPerfil")] usuario usuario, administrador ad, HttpPostedFileBase file)
+		public ActionResult RegAd([Bind(Include = "idUsuario,Foto,Nombre,APP,APM,Sexo,Direccion,Correo,Contraseña,Telefono,idPerfil,tokenRecovery")] usuario usuario, administrador ad, HttpPostedFileBase file)
 		{
 
 			if (file != null)
@@ -415,7 +419,8 @@ namespace CFPPE.Controllers
 					{
 
 						usuario.idPerfil = 4;
-						db.usuario.Add(usuario);
+                        usuario.TokenRecovery = "";
+                        db.usuario.Add(usuario);
 						db.SaveChanges();
 
 						ad.idUsuario = usuario.idUsuario;

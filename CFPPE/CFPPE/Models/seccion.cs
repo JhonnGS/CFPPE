@@ -17,15 +17,18 @@ namespace CFPPE.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public seccion()
         {
+            this.inscripcion = new HashSet<inscripcion>();
             this.materia = new HashSet<materia>();
             this.usuario = new HashSet<usuario>();
         }
     
-        public int idSeccion { get; set; }
+        public long idSeccion { get; set; }
         public string Nombre { get; set; }
         public string Clave { get; set; }
         public string Descripcion { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inscripcion> inscripcion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<materia> materia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

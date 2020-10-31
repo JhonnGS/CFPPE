@@ -10,11 +10,11 @@ function mensaje() {
 function comprueba_extension(archivo) {
 	
 	var file = document.getElementById(archivo).value;
-	extensiones_permitidas = new Array(".jpg");//arreglo que define las extensiones que se permiten
+	extensiones_permitidas = new Array(".jpg");
 
 	mierror = "";
-	if (!file) {//si file es diferente no hace nada es decir que si file no tiene nada no hara nada pero si no
-	} else {//entra a evaluar
+	if (!file) {
+	} else {
 
 		extension = (file.substring(file.lastIndexOf("."))).toLowerCase();//para obtener la extencion del archivo
 		permitida = false;// de tipo booleano pero sei inicializa con faLSE

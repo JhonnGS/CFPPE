@@ -14,9 +14,9 @@ namespace CFPPE.Models
     
     public partial class actividades
     {
-        public int idActividad { get; set; }
-        public int idAlumno { get; set; }
-        public int idMateria { get; set; }
+        public long idActividad { get; set; }
+        public long idAlumno { get; set; }
+        public long idMateria { get; set; }
         public string NombreA { get; set; }
         public string Tema { get; set; }
         public int Calificacion { get; set; }
@@ -25,7 +25,7 @@ namespace CFPPE.Models
         public string Detalle { get; set; }
         public System.TimeSpan TempoActividad { get; set; }
         public int ValorA { get; set; }
-        public Nullable<int> idMaestro { get; set; }
+        public long idMaestro { get; set; }
     
         public virtual alumnos alumnos { get; set; }
         public virtual maestros maestros { get; set; }
