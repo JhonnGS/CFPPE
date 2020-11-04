@@ -128,7 +128,7 @@ namespace CFPPE.Controllers
         private void SendEmail(string EmailDestino, string token)
         {
             string EmailOrigen = "jhonn.94gs@gmail.com";
-            string Contraseña = "JGZ_7N*94";
+            string Contraseña = "";
             string url = urlDomain+"/Access/Recovery/?token="+token; 
             MailMessage oMailMessage = new MailMessage(EmailOrigen, EmailDestino, "Recuperacion de contraseña",
             "<p>Correo para recuperar su contraseña</p><br>" +
