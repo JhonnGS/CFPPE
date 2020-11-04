@@ -16,10 +16,10 @@ body {
 .father-form {
 	align-content:center;
 	width: 900px;
-	padding: 35px;
+	padding: 25px;
 	margin: auto;
 	margin-top: 140px;
-	color: #33c96c;
+	color: #33c96C;
 	background: linear-gradient(45deg, #33c96c, #139D8D );
 }
 
@@ -148,19 +148,16 @@ body {
 
 /*--BOTON-DE-REGISTRAR-----------*/
 .btn {
-	background:#0026ff;
-	color:gold;
-	align-content:center;
-	text-align:center;
-	width: 900%;
-	padding: 10px;
-	border-radius: 2px;
-	border: none;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	font-size: 15px;
-	cursor: pointer;
-	transition: all .3s ease;
+    background: blue;
+    height: 50px;
+    top: 1px;
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
 	.btn:hover {
@@ -169,38 +166,36 @@ body {
 
 
 /*--BOTON-DE-mosttrar-----------*/
-.btn2 {
-	
+.btn2 {	
 	height: 50px;
 	top: 1px;
-	color: #33c96c;
 	padding: 5px;
 	border-radius: 2px;
 	border: none;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	background: linear-gradient(45deg, #33c96c, #139D8D );
+    background: #ffd800;
 	cursor: pointer;
 	transition: all .3s ease;
 }
 
 	.btn2:hover {
-		background: #159ccc;
+		background: #159ccC;
 	}
+
 .btn3 {
-	background: #0026ff;
-	color: gold;
-	align-content: center;
-	text-align: center;
-	width: 400%;
-	padding: 10px;
-	border-radius: 2px;
-	border: none;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	font-size: 15px;
-	cursor: pointer;
-	transition: all .3s ease;
+    background: #ffd800;
+    align-content: center;
+    text-align: center;
+    height: 50px;
+    top: 1px;
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
 	.btn3:hover {
