@@ -14,8 +14,8 @@ namespace CFPPE.Models
     
     public partial class libretamochalum
     {
-        public int idLibMA { get; set; }
-        public int idAlumno { get; set; }
+        public long idLibMA { get; set; }
+        public long idAlumno { get; set; }
         public string NombreLib { get; set; }
         public string Tema { get; set; }
         public bool Documento { get; set; }

@@ -14,12 +14,12 @@ namespace CFPPE.Models
     
     public partial class inscripcion
     {
-        public int idInscripcion { get; set; }
+        public long idInscripcion { get; set; }
         public string Nombre { get; set; }
         public System.DateTime FechaNac { get; set; }
         public System.DateTime FechaInscripcion { get; set; }
         public int Edad { get; set; }
-        public int idSeccion { get; set; }
+        public long idSeccion { get; set; }
         public int Grado { get; set; }
         public string Grupo { get; set; }
         public string AlergiasEnfermedad { get; set; }
@@ -30,5 +30,7 @@ namespace CFPPE.Models
         public string TelCasa { get; set; }
         public string TelTrabajo { get; set; }
         public string Telefono { get; set; }
+    
+        public virtual seccion seccion { get; set; }
     }
 }

@@ -70,6 +70,7 @@ namespace CBPPE.Controllers
 			return RedirectToAction("Index", "Home", new { error = 1, mensaje = "Por el momento no hay Home / se notificara cuando  este listo" });
 		}
 
+
 		public ActionResult Salir()
 		{
 			SessionHelper.DestroyUserSession();

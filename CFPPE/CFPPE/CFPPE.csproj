@@ -169,7 +169,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\alumnosController.cs" />
+    <Compile Include="Controllers\AccessController.cs" />
+    <Compile Include="Controllers\AlumnosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\inscripcionsController.cs" />
     <Compile Include="Controllers\maestrosController.cs" />
@@ -272,6 +273,8 @@
     <Compile Include="Models\usuario.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel\RecoveryPasswordViewModel.cs" />
+    <Compile Include="Models\ViewModel\RecoveryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ILogRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
@@ -287,6 +290,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\form.css" />
     <Content Include="Content\LoReg.css" />
+    <Content Include="Content\modern.css" />
     <Content Include="Content\Pal\assets\css\fontawesome-all.min.css" />
     <Content Include="Content\Pal\assets\css\images\overlay.png" />
     <Content Include="Content\Pal\assets\css\main.css" />
@@ -523,15 +527,9 @@
     <Content Include="Views\perfil\Index.cshtml" />
     <Content Include="Views\Home\Aviso.cshtml" />
     <Content Include="Views\Logueo\Index.cshtml" />
-    <Content Include="Views\alumnos\Create.cshtml" />
-    <Content Include="Views\alumnos\Delete.cshtml" />
-    <Content Include="Views\alumnos\Details.cshtml" />
-    <Content Include="Views\alumnos\Edit.cshtml" />
-    <Content Include="Views\alumnos\Index.cshtml" />
     <Content Include="Views\RegUser\RegMa.cshtml" />
     <Content Include="Views\RegUser\RegTP.cshtml" />
     <Content Include="Views\RegUser\RegAd.cshtml" />
-    <Content Include="Views\RegUser\Recupera.cshtml" />
     <Content Include="Views\RegUser\RegADM.cshtml" />
     <Content Include="Views\inscripcions\Create.cshtml" />
     <Content Include="Views\inscripcions\Delete.cshtml" />
@@ -546,6 +544,11 @@
     <Content Include="Views\maestros\CreateActividades.cshtml" />
     <Content Include="Views\maestros\CreateMateria.cshtml" />
     <Content Include="Views\maestros\CreateTarea.cshtml" />
+    <Content Include="Views\Access\StartRecovery.cshtml" />
+    <Content Include="Views\Access\Recovery.cshtml" />
+    <Content Include="Views\Alumnos\MasterPageAl.cshtml" />
+    <Content Include="Views\Alumnos\Index.cshtml" />
+    <Content Include="Views\Alumnos\Edit.cshtml" />
     <Content Include="Views\maestros\IndexTarea.cshtml" />
     <Content Include="Views\maestros\IndexMateria.cshtml" />
     <Content Include="Views\maestros\IndexActividades.cshtml" />
